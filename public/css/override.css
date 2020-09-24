@@ -1,0 +1,27 @@
+.container {
+   border-width: 20rem;
+   border:solid;
+   border-color: aqua; 
+   height:max-content;
+   min-height:2rem;
+}
+
+.weedle {
+   max-width: 7rem;
+   max-height: 7rem;
+   margin-left: 1rem;
+   margin-bottom: 1rem;
+}
+
+#description, #name, .card-title {
+   overflow-wrap: break-word; 
+   overflow: hidden; 
+   height:max-content;
+}
+
+#modal-title {
+   overflow-wrap: break-word; 
+   overflow: hidden; 
+   height:max-content;
+}
+

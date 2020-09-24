@@ -1,0 +1,8 @@
+version: "3"
+services:    
+ bug-tracker:
+  image: mongo:latest
+  ports:
+   - "30000:27017"
+  environment:
+   - CONNECTION

@@ -1,0 +1,92 @@
+<%- include('templates/header'); -%>
+
+<body>
+    <!-- Heading -->
+    <div class="jumbotron" style="background-color: gray;">
+        <%- include ('templates/leyline_header'); -%>
+    </div>
+
+    <%- include ('templates/header_menu'); -%>
+
+    <!-- Photo upload section -->
+    <!-- VISION: A big square with an "upload" button centred inside. 
+    Once image is uploaded, should show image inside the box.
+    Should then allow the user to annotate the image inside the box. -->
+    <div class="row" style="border: solid black 1px;">
+        <div class="col" style="border: solid black 1px;">
+            <%- include ('templates/photo_upload'); -%>
+        </div>
+        <div class="col" style="text-align: center; border: solid black 1px;">
+            <h3>Register now</h3>
+            <ul>
+                <li>Upload an image</li>
+                <li>Annotate it</li>
+                <li>Earn money!</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr>
+
+    <div>
+        <h3>Use Leyline to...</h3>
+        <div class="row">
+            <div class="col">
+                <ul>
+                    <li>Become a casual data-generator.</li>
+                    <li>Become a serious data-generator: find clients to commission datasets for.</li>
+                    <li>Commission datasets for your latest projects.</li>
+                </ul>
+            </div>
+            <div class="col">
+                <ul>
+                    <li>Contribute to existing datasets.</li>
+                    <li>Connect with data scientists & data miners worldwide.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div>
+        <h3>Learn more</h3>
+        <div class="row">
+            <p>Data mining and data generation are new concepts for a lot of people. But don't be intimidated:
+                they are profittable side-hustles that ANYONE can do.
+            </p>
+            <ul>
+            <li>Become a data generator (no programming involved!)</li>
+            <li>Become a data miner (challenging: recommended for computer programmers)</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr>
+
+    <div>
+        <h3>Disclaimers</h3>
+        <div class="row">
+            <ul>
+                <li>Data can be commissioned anonymously, but all data will eventually become public on the OCEAN blockchain.
+                    Do not commission any confidential information via Leyline. Leyline will not be held accountable for the exposure
+                    of confidential or illicit information by its users.
+                </li>
+                <li>
+                    Since the data uploaded to Leyline is public-access, illicit material is not allowed.
+                    Mild offenses such as copyright breaches will not be punished by law, but by the withholding of LEY tokens and potential account deactivation.
+                    Major offenses such as uploading child pornography and revenge pornography will be traced down to your real identity, and the uploaders will be punished by the appropriate laws. 
+                    Leyline, as a child of the OCEAN protocol, believes in transparency and integrity of data. See 
+                    this page for legal guidelines when using LeyLine.
+                </li>
+                <li>
+                    Leyline is a railroad which transfers the data you upload to the OCEAN blockchain.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- After image is uploaded -->
+    <!-- <div>
+        Annotate Images:
+    </div>-->
+</body>
