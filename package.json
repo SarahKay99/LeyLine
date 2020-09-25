@@ -1,7 +1,7 @@
 {
   "name": "bugtrackerproject",
   "version": "1.0.0",
-  "description": "Bug Tracker",
+  "description": "LeyLine",
   "main": "app.js",
   "scripts": {
     "test": "docker-compose up -d && set CONNECTION=mongodb://localhost:30000/testDB&& mocha test --exit",
@@ -10,7 +10,7 @@
   "keywords": [
     "Bug"
   ],
-  "author": "Node Kings (Alex)",
+  "author": "LeyLine Development Team",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

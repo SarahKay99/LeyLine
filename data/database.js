@@ -1,3 +1,6 @@
+/// <summary>
+/// This file initiates the Mongoose database.
+/// </summary>
 const database = (function () {
   const mongoose = require("mongoose");
   let dbInstance = null;
@@ -7,21 +10,21 @@ const database = (function () {
     console.log(`Database Connection: ${connectionString}`);
 
     if (!dbInstance) {
-        //console.log("Creating New Instance");
+      console.log("Creating New MongoDB Instance");
       mongoose.connect(connectionString, {
           useNewUrlParser: true,
           useUnifiedTopology: true,
         })
         .then(() => {
-          //console.log("connected");
+          console.log("connected");
         })
         .catch((err) => {
-          //console.error("connection failed" + err);
+          console.error("(./data/database.js) Connection failed: " + err);
         });
       return dbInstance = mongoose;
     }
     else{
-        //console.log("Instance Already Exists");
+        console.log("MongoDB Instance Already Exists");
         return dbInstance;
     }
   };

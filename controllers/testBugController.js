@@ -1,8 +1,8 @@
 const seedData = require("../data/seedData");
-const repository = require('../data/bugRepository');
+const repository = require('../data/dataRepository');
 
 module.exports = {
-  //Delete One Day
+  // Delete One Day
   create_bug: async (req, res) => {
     bug = {
       name: "Testy New Bug",
@@ -14,12 +14,12 @@ module.exports = {
       comments: [],
     };
     await repository.InsertSingleBug(bug);
-    res.redirect('/bugs');
+    res.redirect('/leyline_index');
   },
 
   seed_data: async (req, res) => {
     await seed();
-    res.redirect('/bugs');
+    res.redirect('/leyline_index');
   },
 };
 

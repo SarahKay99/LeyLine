@@ -1,10 +1,12 @@
+// Router tells the server what to do in the case of each URL
+// Relies on the controllers
 const express = require("express");
 const bugController = require('../controllers/bugController');
 const testController = require('../controllers/testBugController');
 
 let router = express.Router();
 
-router.get("/", bugController.get_all_bugs);
+router.get("/leyline_index", bugController.get_all_categories); 
 router.get('/getBugsJson', bugController.get_all_bugs_json);
 router.post('/getBugByIdJson', bugController.get_bug_by_id_json);
 router.get("/save", testController.create_bug);

@@ -1,5 +1,5 @@
 module.exports = (() => {
-  const BugObject = require("./bugSchemas");
+  const BugObject = require("./dataSchemas");
   const database = require("./database");
 
   database.GetDbInstance();
@@ -19,8 +19,8 @@ module.exports = (() => {
     bug.save();
   }
 
-  async function _getAllBugs() {
-    return await BugObject.find()
+  async function _getAllCategories() {
+    return await BugObject.find().populate("image")
   }
 
   async function _deleteCollection() {
@@ -42,8 +42,8 @@ module.exports = (() => {
     InsertSingleBug(bug) {
       return _insertSingleBug(bug);
     },
-    GetAllBugs() {
-      return _getAllBugs();
+    GetAllCategories() {
+      return _getAllCategories();
     },
     DeleteCollection() {
       return _deleteCollection();

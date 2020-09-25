@@ -1,5 +1,5 @@
 const assert = require('assert');
-const repo = require("../data/bugRepository");
+const repo = require("../data/dataRepository");
 const expect = require('chai').expect;
 const seedData = require('../data/seedData');
 

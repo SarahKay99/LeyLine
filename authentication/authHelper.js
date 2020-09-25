@@ -1,3 +1,6 @@
+/// <summary>
+/// Middleware functions used inside authroutes. 
+/// </summary>
 const bcrypt = require('bcryptjs');
 
 function comparePassword(userPassword, databasePassword) {
@@ -16,11 +19,12 @@ async function createEncryptedUser (username, password) {
 
 function loginRequired(req, res, next) {
     if(!req.user) {
-        return res.status(401).json({status: 'Please Login Mate!'});
+        return res.status(401).json({status: 'Please Log in Mate!'});
     }
     return next();
 }
 
+// Packaging functions up to allow them to be used in require() statements.
 module.exports = {
     loginRequired,
     comparePassword,

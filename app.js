@@ -1,10 +1,10 @@
-//express Module: contains functions for building web apps & API's i.e. set(), get()
+// express Module: contains functions for building web apps & API's i.e. set(), get()
 const path = require('path');
 const express = require("express");
 const chroma = require("chroma-log");
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const bugRouter = require('./routes/bug-routes');
+const mainRouter = require('./routes/main-routes');
 const commentRouter = require('./routes/comments-routes');
 const authRouter = require('./routes/auth-routes');
 const session = require('express-session');
@@ -22,6 +22,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(passport.initialize());
@@ -37,17 +38,17 @@ app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist'));
 app.use('/dragula', express.static(__dirname + '/node_modules/dragula/dist'));
 
 app.get('/', (req, res) => {
-  res.redirect('/bugs');
+  res.redirect('leyline_index');
 });
 
-app.use('/bugs', bugRouter);
+// MAIN URLS
+app.use('/', mainRouter);
 app.use('/comments', commentRouter);
 app.use('/auth', authRouter);
 
+// ERROR ROUTER
 app.get("/error", (req, res) => {
   res.render("error");
 });
 
 module.exports = app;
-
-

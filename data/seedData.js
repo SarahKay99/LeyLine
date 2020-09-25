@@ -1,3 +1,6 @@
+/// <summary>
+/// The initial data that is in the database upon DB initialization.
+/// </summary>
 let comments = require('./seedCommentData');
 
 module.exports = {

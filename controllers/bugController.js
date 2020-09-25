@@ -1,10 +1,11 @@
-const repository = require("../data/bugRepository");
+// import datasets
+const repository = require("../data/dataRepository");
 const seedData = require("../data/seedData");
 
 module.exports = {
   // render main page.
-  get_all_bugs: async (req, res) => {
-    repository.GetAllBugs()
+  get_all_categories: async (req, res) => {
+    repository.GetAllCategories()
     .then((data) => {
       res.render("leyline_index", {
         title: "LeyLine",
@@ -88,8 +89,3 @@ module.exports = {
     )
   }
 };
-
-
-
-
-
