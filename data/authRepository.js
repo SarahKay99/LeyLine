@@ -9,13 +9,13 @@ module.exports = (() => {
     }
 
     async function _deleteCollection() {
-        await UserObject.deleteMany();
+      await UserObject.deleteMany();
     }
 
     async function _insertUser(user) {
-        let userModel = new UserObject(user);
-        return await userModel.save()
-      }
+      let userModel = new UserObject(user);
+      return await userModel.save();
+    }
     
     return {
       GetUser(userQuery) {

@@ -1,5 +1,5 @@
 const seedData = require("../data/seedData");
-const repository = require('../data/dataRepository');
+const repository = require('../data/imageRepository');
 
 module.exports = {
   // Delete One Day

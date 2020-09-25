@@ -1,5 +1,6 @@
-(function (seedCommentData) {
-    seedCommentData.initialComments = [
+/// Testing file for embedded schemas
+(function (seedAnnotationData) {
+    seedAnnotationData.initialComments = [
         {
             id: 1,
             name: "Bob",

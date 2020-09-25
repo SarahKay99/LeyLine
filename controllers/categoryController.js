@@ -1,5 +1,5 @@
 // import datasets
-const repository = require("../data/dataRepository");
+const repository = require("../data/categoryRepository");
 const seedData = require("../data/seedData");
 
 module.exports = {
@@ -81,7 +81,7 @@ module.exports = {
       (err, result) => {
         if(err) {
           res.redirect('/error');
-        } 
+        }
         else {
           res.send(require('ejs').render(result, bugs));
         }

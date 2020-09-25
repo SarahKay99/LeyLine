@@ -10,17 +10,32 @@
     <!-- VISION: A big square with an "upload" button centred inside. 
     Once image is uploaded, should show image inside the box.
     Should then allow the user to annotate the image inside the box. -->
-    <div class="row" style="border: solid black 1px;">
+    <div class="row h-100" style="border: solid black 1px;">
+        <div class="col my-auto" style="text-align: center;">
+            <h3 style="border: solid black 1px;">We pay you to supply, annotate and sort data. Get started now!</h3>
+            
+            <!-- CAROUSEL -->
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <button data-target="#carouselExampleIndicators" class="btn btn-secondary" data-slide-to="0" class="active">Supply</button>
+                <button data-target="#carouselExampleIndicators" class="btn btn-secondary" data-slide-to="1">Annotate</button>
+                <button data-target="#carouselExampleIndicators" class="btn btn-secondary" data-slide-to="2">Sort</button>
+                <div class="carousel-inner">
+                    <div class="carousel-item-active">
+                        <%- include ('templates/carousel/supply') -%>
+                    </div>
+                    <div class="carousel-item">
+                        <%- include ('templates/carousel/annotate') -%>
+                    </div>
+                    <div class="carousel-item">
+                        <%- include ('templates/carousel/sort') -%>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
         <div class="col" style="border: solid black 1px;">
             <%- include ('templates/photo_upload'); -%>
-        </div>
-        <div class="col" style="text-align: center; border: solid black 1px;">
-            <h3>Register now</h3>
-            <ul class="text-center" style="display: inline-block; vertical-align: middle;">
-                <li>Upload an image</li>
-                <li>Annotate it</li>
-                <li>Earn money!</li>
-            </ul>
         </div>
     </div>
 

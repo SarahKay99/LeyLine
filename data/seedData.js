@@ -1,7 +1,7 @@
 /// <summary>
 /// The initial data that is in the database upon DB initialization.
 /// </summary>
-let comments = require('./seedCommentData');
+let comments = require('./seedAnnotationData');
 
 module.exports = {
     initialBugs: [
