@@ -38,7 +38,7 @@ app.use('/components', express.static(__dirname + '/src/views/components'));
 //app.use('/dragula', express.static(__dirname + '/node_modules/dragula/dist'));
 
 app.get('/', (req, res) => {
-  res.redirect('leyline_index');
+  res.redirect('index');
 });
 
 // MAIN URLS

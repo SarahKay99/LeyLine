@@ -15,7 +15,9 @@
     <link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
     <link rel="canonical" href="https://codepen.io/DasBo/pen/RpwOmp?limit=all&page=38&q=image" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'><link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css'><link rel='stylesheet prefetch' href='//cdn.materialdesignicons.com/1.8.36/css/materialdesignicons.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
+    <!--<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css'>-->
+    <link rel='stylesheet prefetch' href='//cdn.materialdesignicons.com/1.8.36/css/materialdesignicons.min.css'>
     <style class="cp-pen-styles">@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
     @import url("https://fonts.googleapis.com/css?family=Raleway");
@@ -79,7 +81,7 @@
     .upload-options {
         position: relative;
         height: 75px;
-        background-color: cadetblue;
+        background-color: #6c757d;
         cursor: pointer;
         overflow: hidden;
         text-align: center;
@@ -88,7 +90,7 @@
     }
 
     .upload-options:hover {
-        background-color: #7fb1b3;
+        background-color: #7A828A;
     }
 
     .upload-options input {
@@ -117,6 +119,7 @@
     }
 
     .upload-options label::after {
+        margin-top: 0.25em;
         content: 'add';
         font-family: 'Material Icons';
         position: absolute;
@@ -212,12 +215,12 @@
 
 <!-- HTML -->
 <thisbody>
-    <div class="wrapper" style="border: solid darkgreen 1px;">
+    <div class="wrapper">
 
-        <div class="box" style="border: solid black 1px;">
-            <div class="js--image-preview" style="border: solid blue 1px;"></div>
-            <div class="upload-options" style="border: solid black 1px;">
-            <label style="border: solid red 1px;">
+        <div class="box">
+            <div class="js--image-preview"></div>
+            <div class="upload-options">
+            <label>
                 <input type="file" class="image-upload" accept="image/*" />
             </label>
             </div>

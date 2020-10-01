@@ -1,3 +1,14 @@
-<div class="container">
-    Annotate
+<div class="container" id="annotate-container">
+    <form action="#" method="POST" id="annotate-form">
+        <select class="form-control w-50 center-content" name="datatypes" id="datatypes">
+            <option value="" disabled selected>Choose a datatype:</option>
+            <option value="image">Image (default)</option>
+            <option value="text">Text</option>
+            <option value="video">Video</option>
+            <option value="sound">Sound</option>
+            <option value="graphic-object">Graphic Object</option>
+        </select>
+
+        <input type="submit" value="Submit" class="btn btn-dark standard-btn w-25" role="button">
+    </form>
 </div>

@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <%- include('templates/header'); -%>
+    <%- include('templates/head', {subtitle: "Welcome"}); -%>
 
     <body>
+        <div class="container">
         <!-- Heading -->
-        <%- include ('templates/leyline_header'); -%>
-
-        <%- include ('templates/header_menu'); -%>
+        <%- include ('templates/header'); -%>
 
         <!-- Photo upload section -->
         <!-- VISION: A big square with an "upload" button centred inside. 
         Once image is uploaded, should show image inside the box.
         Should then allow the user to annotate the image inside the box. -->
-        <div class="row h-100" style="border: solid black 1px; margin-top: 2em;">
-            <div class="col my-auto" style="text-align: center;">
-                <h3 style="border: solid black 1px;">We pay you to supply, annotate and sort data. Get started now!</h3>
+        <div class="row center-content" id="index-main">
+            <div class="col-7 my-auto" style="text-align: center;">
+                <h3 id="carousel-header">We pay you to supply, annotate and sort data. Get started now!</h3>
                 
                 <!-- CAROUSEL -->
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
                     <div class="carousel-buttons">
-                        <button class="btn btn-secondary standard-btn" id="one" style="width: 25%;">Supply</button>
-                        <button class="btn btn-secondary standard-btn" id="two" style="width: 25%;">Annotate</button>
-                        <button class="btn btn-secondary standard-btn" id="three" style="width: 25%;">Sort</button>
+                        <button class="btn btn-secondary standard-btn" id="one" style="width: 25%;"><i class="fas fa-upload"></i> Supply</button>
+                        <button class="btn btn-secondary standard-btn" id="two" style="width: 25%;"><i class="fas fa-pencil-alt"></i> Annotate</button>
+                        <button class="btn btn-secondary standard-btn" id="three" style="width: 25%;"><i class="fas fa-sort"></i> Sort</button>
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -37,9 +36,16 @@
                 </div>
             </div>
 
-            <div class="col" style="border: solid black 1px;">
-                <!-- there is a problem in here -->
-                <%- include ('templates/photo_upload'); -%>
+            <div id="content-secondary" class="col my-auto">
+                <div id="upload-wrapper">
+                    <%- include('templates/upload') -%>
+                </div>
+                <div id="labelling-wrapper">
+                    <%- include ('templates/labelling') -%>
+                </div>
+                <div id="sort-wrapper">
+                    <%- include('templates/sort') -%>
+                </div>
             </div>
         </div>
 
@@ -102,32 +108,12 @@
                 </ul>
             </div>
         </div>
+        </div>
         <!-- After image is uploaded -->
         <!-- <div>
             Annotate Images:
         </div>-->
-        <script>
-            $(document).ready(function(){
-                var carousel = $('#carouselExampleIndicators');
-                $('#one').click(function(e) {
-                    e.stopImmediatePropagation();
-                    console.log("One called");
-                    carousel.carousel(0);
-                    $('#one').stop;
-                });
-                $('#two').click(function(e) {
-                    e.stopImmediatePropagation();
-                    console.log("Two called");
-                    carousel.carousel(1);
-                    $('#two').stop;
-                });
-                $('#three').click(function(e) {
-                    e.stopImmediatePropagation();
-                    console.log("Three called");
-                    carousel.carousel(2);
-                    $('#three').stop;
-                });
-            });
-        </script>
+        <%- include('templates/footer') %>
+        <script src="/javascripts/scripts.js"></script>
     </body>
 </html>

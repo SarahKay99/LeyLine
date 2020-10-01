@@ -6,7 +6,7 @@ const testController = require('../controllers/testBugController');
 
 let router = express.Router();
 
-router.get("/leyline_index", categoryController.get_all_categories); 
+router.get("/index", categoryController.get_all_categories); 
 router.get('/getBugsJson', categoryController.get_all_bugs_json);
 router.post('/getBugByIdJson', categoryController.get_bug_by_id_json);
 router.get("/save", testController.create_bug);

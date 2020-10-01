@@ -7,7 +7,7 @@ module.exports = {
   get_all_categories: async (req, res) => {
     repository.GetAllCategories()
     .then((data) => {
-      res.render("leyline_index", {
+      res.render("index", {
         title: "LeyLine",
         subtitle: "LeyLine",
         bugList: data,
