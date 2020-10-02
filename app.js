@@ -5,7 +5,6 @@ const chroma = require("chroma-log");
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const mainRouter = require('./routes/main-routes');
-const commentRouter = require('./routes/comments-routes');
 const authRouter = require('./routes/auth-routes');
 const session = require('express-session');
 const passport = require('passport');
@@ -41,10 +40,17 @@ app.get('/', (req, res) => {
   res.redirect('index');
 });
 
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+
+app.get('/register', (req, res) => {
+  res.render('register');
+})
+
 // MAIN URLS
 app.use('/', mainRouter);
-app.use('/comments', commentRouter);
-app.use('/auth', authRouter);
+app.use('/login', authRouter);
 
 // ERROR ROUTER
 app.get("/error", (req, res) => {

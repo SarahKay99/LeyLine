@@ -2,8 +2,11 @@ const repo = require('../data/authRepository');
 const authHelper = require('../authentication/authHelper');
 const passport = require('../authentication/local');
 
-// module.exports allows it to be put in a require() function.
 module.exports = {
+    get_login_page: async (req, res, next) => {
+        res.render("login");
+    },
+
     register_a_user: async (req, res, next) => {
         let user = await authHelper.createEncryptedUser(req.body.username, req.body.password);
         repo.InsertUser(user)
@@ -20,6 +23,7 @@ module.exports = {
                 //res.redirect('/error');
             });
     },
+
     login_a_user: (req, res, next) => {
         passport.authenticate('local', (err, userReturn, info) => {
             if(err) {
@@ -40,6 +44,7 @@ module.exports = {
             }
         })(req, res, next);
     },
+
     logout_a_user: (req, res, next) => {
         req.logout();
         handleResponse(res, 200, 'success');
