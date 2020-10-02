@@ -1,5 +1,11 @@
+/// <SUMMARY>
+/// Repo for one of ~5 datatypes, Image.
+/// ONLY SUPPORTS 2D/3D SHAPE ANNOTATIONS! 
+/// IMAGE SEGMENTATION NOT SUPPORTED.
+/// </SUMMARY>
+
 const mongoose = require("mongoose");
-const { schema } = require("./authSchemas");
+const { schema } = require("../authSchemas");
 
 // PRIVATE SCHEMAS: Children of Public Schemas
 let coordinateSchema = new mongoose.Schema({
@@ -9,7 +15,8 @@ let coordinateSchema = new mongoose.Schema({
   ref1: {type: mongoose.Schema.Types.ObjectId, ref: 'coordinate', required: true},
   ref2: {type: mongoose.Schema.Types.ObjectId, ref: 'coordinate', required: false},
 });
- 
+
+// annotationSchema = a list of coordinates bound to their schema.
 let annotationSchema = new mongoose.Schema({
   imageID: { type: mongoose.Schema.Types.ObjectId, ref: 'image' },            // Foreign Key
   coords: [coordinateSchema]                                                  // X, Y, maybe Z. LinkedList
