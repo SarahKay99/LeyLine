@@ -23,7 +23,7 @@ footer {
 }
 
 .btn-header {
-    border: black 1px solid !important;
+    border: #616970 1px solid !important;
     width: 100%;
     border-radius: 0 !important;
     margin-left: -0.3em !important;
@@ -39,6 +39,10 @@ footer {
     border-radius: 0 !important;
 }
 
+#dropdown-btn {
+    color: #616970;
+}
+
 .dropdown-menu {
     transform: translate3d(0px, 93px, 0px) !important;
     padding: 0 !important;
@@ -46,13 +50,13 @@ footer {
     top: -1px !important;
 }
 
-ul#header-menu {
+#header-menu {
     display: table;
     width: 100%;
     padding: 0 !important;
 }
 
-ul#header-menu li {
+#header-menu a {
     width: 20%;
     display: table-cell;
 }
@@ -108,4 +112,9 @@ ul#header-menu li {
 
 #img-placeholder {
     width: 100%;
+}
+
+.row p {
+    padding-left: 2em;
+    padding-right: 2em;
 }
