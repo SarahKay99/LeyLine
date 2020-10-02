@@ -25,11 +25,12 @@ let annotationSchema = new mongoose.Schema({
 // coords.count() gives the number of coordinates, num_points.
 
 let imageSchema = new mongoose.Schema({
+  img: { type: Buffer },
   address: { type: String, required: true },
   dimensions: { type: Boolean, required: true },                              // True if 2D, False if 3D
   categories: [{ type: mongoose.Schema.Types.ObjectId, ref: 'category' }],    // List of Foreign Keys
   datasets: [{ type: mongoose.Schema.Types.ObjectId, ref: 'dataset' }],       // List of Foreign keys
-  annotations: [annotationSchema]                                             // annotationSchema2D
+  annotations: [annotationSchema],
 });
 
 mongoose.model("coordinate", coordinateSchema)                                // For reference's sake
