@@ -1,10 +1,14 @@
 <div class="fixed-top w-100">
     <nav class="navbar navbar-light topbar" style="background-color: #c6c5d4;">
-        <a class="navbar-brand">Logo Here</a>
+        <a class="navbar-brand" href="/">Logo Here</a>
         <span>Start Earning Today!</span>
         <form>
-            <button class="btn btn-sm btn-outline-secondary standard-btn" type="button" onclick="location.href = 'login'">Login</button>
-            <button class="btn btn-sm btn-outline-secondary standard-btn" type="button">Register</button>
+            <button class="btn btn-sm btn-outline-secondary standard-btn" type="button" onclick="location.href = 'login'">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </button>
+            <button class="btn btn-sm btn-outline-secondary standard-btn" type="button" onclick="location.href = 'register'">
+                <i class="fas fa-user-plus"></i> Register
+            </button>
         </form>
     </nav>
     <%- include ('dropdown') -%>
