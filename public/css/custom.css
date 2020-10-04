@@ -114,7 +114,27 @@ footer {
     width: 100%;
 }
 
+#upload-wrapper {
+    cursor: pointer;
+}
+
+#img-upload {
+    border: none !important;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+#img-frame {
+    box-shadow: 1px 1px 4px #a1a1a1;
+}
+
 .row p {
     padding-left: 2em;
     padding-right: 2em;
+}
+
+.validate-warning {
+    color: #dc3545;
+    visibility: hidden;
 }

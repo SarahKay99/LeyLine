@@ -9,7 +9,10 @@
     method='post' 
     encType='multipart/form-data'>
         <!-- Input button -->
-        <input name="uploadedImg" type="file" class="image-upload" accept="image/*" />
-        <input type="submit" value="Submit" class="btn btn-dark standard-btn w-25" role="button" />
+        <label id="#upload-wrapper" for="img-upload" class="btn btn-secondary standard-btn w-50">
+            <i class="far fa-image"></i> Select an image
+        </label>
+        <input id="img-upload" name="uploadedImg" type="file" class="form-control" accept="image/*"><br>
+        <input type="submit" value="Submit" class="btn btn-dark standard-btn w-25" role="button">
     </form>
 </div>

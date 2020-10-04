@@ -33,7 +33,7 @@ app.use(fileUpload());
 
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(flash());  
+app.use(flash());
 app.use(chroma);
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -52,6 +52,24 @@ app.get('/login', (req, res) => {
 
 app.get('/register', (req, res) => {
   res.render('register');
+})
+
+// Putting image in database
+app.post('/upload', (req, res) => {
+  console.log("=== Executing POST /upload ===");
+  if (req.files != null) {
+    try {
+      console.log("req.files != null: proceeding to save file...");
+      // save image to database
+      const img = req.files.uploadedImg;
+    }
+    catch(err) {
+      console.log(err.message);
+    }
+  }
+  else {
+    console.log("___POST /upload ERROR: req.files == null");
+  }
 });
 
 app.post('/registerUser', authController.register_a_user);
