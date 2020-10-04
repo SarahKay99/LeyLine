@@ -129,3 +129,8 @@ footer {
     padding-left: 2em;
     padding-right: 2em;
 }
+
+.validate-warning {
+    color: #dc3545;
+    visibility: hidden;
+}

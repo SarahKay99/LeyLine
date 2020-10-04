@@ -25,6 +25,8 @@ $(document).ready(function(){
             reader.onload = function(e) {
                 $("#img-preview")       
                     .attr('src', e.target.result)
+                    .width(370)
+                    .height(200);
             };
             reader.readAsDataURL(this.files[0]);
             $("#img-preview").show()
