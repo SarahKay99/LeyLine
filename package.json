@@ -1,11 +1,11 @@
 {
-  "name": "bugtrackerproject",
+  "name": "LeyLine",
   "version": "1.0.0",
   "description": "LeyLine",
   "main": "app.js",
   "scripts": {
     "test": "docker-compose up -d && set CONNECTION=mongodb://localhost:30000/testDB&& mocha test --exit",
-    "start": "docker-compose up -d && set CONNECTION=mongodb://localhost:30000/bugDB&& nodemon server.js"
+    "start": "docker-compose up -d && set CONNECTION=mongodb://localhost:30000/leyLineDB&& nodemon server.js"
   },
   "keywords": [
     "Bug"
@@ -39,5 +39,16 @@
     ],
     "delay": "2000",
     "env": {}
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SarahKay99/LeyLine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SarahKay99/LeyLine/issues"
+  },
+  "homepage": "https://github.com/SarahKay99/LeyLine#readme"
 }

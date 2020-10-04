@@ -1,3 +1,7 @@
+// return await userObject.something() returns a Promise.
+// Promise { <pending> }
+// Promises are handled 
+
 module.exports = (() => {
     const UserObject = require("./authSchemas");
     const database = require("./database");

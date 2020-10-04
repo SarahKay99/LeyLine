@@ -1,9 +1,8 @@
-// express Module: contains functions for building web apps & API's i.e. set(), get()
 const path = require('path');
 const fileUpload = require('express-fileupload');
 const express = require("express");
 const chroma = require("chroma-log");
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');              // Handles ? & % @ encoding of weird characters.
 const cookieParser = require('cookie-parser');
 const mainRouter = require('./routes/main-routes');
 const authRouter = require('./routes/auth-routes');
@@ -11,10 +10,13 @@ const session = require('express-session');
 const passport = require('passport');
 const flash = require('connect-flash');
 const { kStringMaxLength } = require('buffer');
+const authController = require('./controllers/authController');
 let app = express();
 
 app.set("views", "./src/views");
-app.set("view engine", "ejs");
+app.set("view engine", "ejs");app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
 app.use(cookieParser());
 
@@ -50,33 +52,11 @@ app.get('/login', (req, res) => {
 
 app.get('/register', (req, res) => {
   res.render('register');
-})
-
-// Putting image in database
-app.post('/upload', async (req, res) => {
-  console.log("=== Executing POST /upload ===");
-  if (req.files != null) {
-    try {
-      console.log("req.files != null: proceeding to save file...");
-      // save image to database
-      const img = req.files.uploadedImg;
-    }
-    catch(err) {
-      console.log(err.message);
-    }
-  }
-  else {
-    console.log("___POST /upload ERROR: req.files == null");
-  }
 });
 
-// Registering a user (see authController and authRepository)
-app.post('/register', async (req, res) => {
-  console.log("=== Executing POST /register ===");
+app.post('/registerUser', authController.register_a_user);
 
-});
-
-// MAIN URLS
+// REGISTERING ROUTERS
 app.use('/', mainRouter);
 app.use('/login', authRouter);
 

@@ -4,7 +4,11 @@
     <body>
         <%- include ('templates/header'); -%>
         <div class="container">
-            <form class="form-signin center-content" style="text-align: center; display: inline-block; margin-top: 10em;">
+            <!--Begin form-->
+            <form class="form-signin center-content" 
+            method='post'
+            action='/login/loginUser'
+            style="text-align: center; display: inline-block; margin-top: 10em;">
                 <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
                 <h1 class="h3 mb-3 font-weight-normal">Please log in</h1>
                 <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus="">

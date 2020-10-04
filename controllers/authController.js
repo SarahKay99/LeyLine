@@ -3,46 +3,53 @@ const authHelper = require('../authentication/authHelper');
 const passport = require('../authentication/local');
 
 module.exports = {
-    get_login_page: async (req, res, next) => {
-        res.render("login");
-    },
-
     register_a_user: async (req, res, next) => {
-        let user = await authHelper.createEncryptedUser(req.body.username, req.body.password);
-        repo.InsertUser(user)
-            .then((response) => {
-                passport.authenticate('local', (err, userReturn, info) => {
-                    if(userReturn) {
-                        //res.redirect('/index');
-                        handleResponse(res, 200, 'success');
-                    }
-                })(req, res, next);
-            })
-            .catch((err) => {
-                handleResponse(res, 500, 'error');
-                //res.redirect('/error');
-            });
+        console.log("=== Executing register_a_user ===");
+        let pword = await authHelper.createEncryptedPassword(req.body.password);
+      
+        user = {
+            username: req.body.username,
+            email: req.body.email,
+            password: pword,
+            firstName: req.firstName,
+            lastName: req.lastName
+        }
+        
+        repo.InsertUser(user);
+
+        // testing
+        repo.GetUser({ username: "Sarah" })   // Promise { <pending> }
+          .then((result) => {                 // result = resolved promise.
+            console.log("USER = ", result);
+            // redirect to successfulRegister page then to Index after 5sec.
+            res.redirect('../index');
+          })
+          .catch((err) => {
+            // handleResponse(res, 500, 'error');
+            res.redirect('../error');
+          });
     },
 
     login_a_user: (req, res, next) => {
+        console.log("=== Executing login_a_user ===");
         passport.authenticate('local', (err, userReturn, info) => {
-            if(err) {
+            if (err) {
                 handleResponse(res, 500, 'error');
             }
-            if(!userReturn) {
+            if (!userReturn) {
                 handleResponse(res, 404, 'User not found');
             }
-            if(userReturn) {
+            if (userReturn) {
                 req.logIn(userReturn, (err) => {
                     if(err) {
                         handleResponse(res, 500, 'error');
                     }
-                    else{
+                    else {
                         handleResponse(res, 200, 'success');
                     }
                 })
             }
-        })(req, res, next);
+        }) (req, res, next);
     },
 
     logout_a_user: (req, res, next) => {
