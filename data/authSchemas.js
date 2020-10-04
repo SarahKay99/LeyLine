@@ -1,3 +1,4 @@
+const { hash } = require('bcryptjs');
 const mongoose = require('mongoose');
 
 let userSchema = new mongoose.Schema({

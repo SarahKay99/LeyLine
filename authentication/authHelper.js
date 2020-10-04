@@ -9,7 +9,7 @@ function comparePassword(userPassword, databasePassword) {
 
 async function createEncryptedPassword(password) {
     const salt = await bcrypt.genSalt();
-    const hash = await bcrypt.hash(password, salt);
+    const hash = bcrypt.hash(password, salt);       // Promise { <pending> }
     return hash;
 }
 

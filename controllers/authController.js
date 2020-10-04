@@ -3,16 +3,34 @@ const authHelper = require('../authentication/authHelper');
 const passport = require('../authentication/local');
 
 module.exports = {
+    // POST /registerUser
     register_a_user: async (req, res, next) => {
         console.log("=== Executing register_a_user ===");
-        let pword = await authHelper.createEncryptedPassword(req.body.password);
+        var pword;
+
+        // Retrieving hashed password
+        await authHelper.createEncryptedPassword(req.body.password)   
+            .then((result) => {
+                console.log("Successfully achieved hash from promise.");
+                console.log("RESULT = ", result);
+                pword = result;
+            })
+            .catch((err) => {
+                console.log("___authController.js ERROR: Couldn't retrieve hash from promise.");
+            });
+
+        console.log("USERNAME = ", req.body.username);
+        console.log("EMAIL = ", req.body.email);
+        console.log("PASSWORD (raw) = ", req.body.password);
+        console.log(pword);
+        console.log("FIRST NAME = ", req.body.firstName);
       
         user = {
             username: req.body.username,
             email: req.body.email,
             password: pword,
-            firstName: req.firstName,
-            lastName: req.lastName
+            firstName: req.body.firstName,
+            lastName: req.body.lastName
         }
         
         repo.InsertUser(user);
@@ -30,9 +48,18 @@ module.exports = {
           });
     },
 
+    // POST /LoginUser
     login_a_user: (req, res, next) => {
         console.log("=== Executing login_a_user ===");
+        
+        console.log("LOGIN EMAIL = ", req.body.loginEmail);
+        console.log("LOGIN PASSWORD = ", req.body.loginPassword);
+        
         passport.authenticate('local', (err, userReturn, info) => {
+            console.log("error = ", err);
+            console.log("userReturn = ", userReturn);
+            console.log("info = ", info);
+
             if (err) {
                 handleResponse(res, 500, 'error');
             }
@@ -46,6 +73,7 @@ module.exports = {
                     }
                     else {
                         handleResponse(res, 200, 'success');
+                        console.log(`___authController.js user ${userReturn.username} successfully logged in!`);
                     }
                 })
             }
