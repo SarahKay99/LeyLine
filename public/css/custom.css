@@ -114,6 +114,17 @@ footer {
     width: 100%;
 }
 
+#upload-wrapper {
+    cursor: pointer;
+}
+
+#img-upload {
+    border: none !important;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
 .row p {
     padding-left: 2em;
     padding-right: 2em;

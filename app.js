@@ -53,7 +53,7 @@ app.get('/register', (req, res) => {
 })
 
 // Putting image in database
-app.post('/upload', async (req, res) => {
+app.post('/upload', (req, res) => {
   console.log("=== Executing POST /upload ===");
   if (req.files != null) {
     try {
