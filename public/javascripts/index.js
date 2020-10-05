@@ -1,4 +1,6 @@
-$(document).ready(function(){
+$(document).ready(function() {
+
+    // ../index.ejs
     var carousel = $('#carouselExampleIndicators');
     $('#one').click(function() {
         $('#photo-wrapper').show();
@@ -19,6 +21,7 @@ $(document).ready(function(){
         carousel.carousel(2);
     });
 
+    // ../templates/carousel/supply.ejs
     $("#img-upload").change(function() {
         if (this.files && this.files[0]) {
             var reader = new FileReader();

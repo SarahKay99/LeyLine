@@ -4,7 +4,7 @@
 const { Mongoose } = require("mongoose");
 
 module.exports = (() => {
-  // ImageObject is the equivalent of a table in SQL, called Documents.
+  // ImageObject is the equivalent of a table in SQL, called Documents in Mongoose.
   const ImageObject = require("./imageSchemas");
   const database = require("../database");
   

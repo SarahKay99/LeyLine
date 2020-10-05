@@ -165,3 +165,8 @@ footer {
 #content-wrap {
     padding-bottom: 5rem;  
   }
+
+#content-container {
+    text-align: center;
+    margin-top: 10em;
+}

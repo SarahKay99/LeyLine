@@ -24,7 +24,7 @@ module.exports = {
         console.log("PASSWORD (raw) = ", req.body.password);
         console.log(pword);
         console.log("FIRST NAME = ", req.body.firstName);
-      
+        
         user = {
             username: req.body.username,
             email: req.body.email,
@@ -39,11 +39,11 @@ module.exports = {
         repo.GetUser({ username: "Sarah" })   // Promise { <pending> }
           .then((result) => {                 // result = resolved promise.
             console.log("USER = ", result);
-            // redirect to successfulRegister page then to Index after 5sec.
             res.redirect('../index');
           })
           .catch((err) => {
-            // handleResponse(res, 500, 'error');
+            handleResponse(200, 'success');
+            console.log(`___authController.js ERROR: ${err}`);
             res.redirect('../error');
           });
     },
@@ -61,19 +61,24 @@ module.exports = {
             console.log("info = ", info);
 
             if (err) {
-                handleResponse(res, 500, 'error');
+                handleResponse(500, 'error');
+                res.redirect("error");
             }
             if (!userReturn) {
-                handleResponse(res, 404, 'User not found');
+                handleResponse(404, 'User not found');
+                res.redirect("error");
             }
             if (userReturn) {
                 req.logIn(userReturn, (err) => {
                     if(err) {
-                        handleResponse(res, 500, 'error');
+                        res.redirect("../error");
+                        handleResponse(500, 'error');
                     }
                     else {
-                        handleResponse(res, 200, 'success');
+                        handleResponse(200, 'success');
                         console.log(`___authController.js user ${userReturn.username} successfully logged in!`);
+                        
+                        res.redirect("../index");
                     }
                 })
             }
@@ -82,10 +87,10 @@ module.exports = {
 
     logout_a_user: (req, res, next) => {
         req.logout();
-        handleResponse(res, 200, 'success');
+        handleResponse(200, 'success');
     }
 };
 
-function handleResponse(res, code, statusMsg) {
-    res.status(code).json({status: statusMsg});
+function handleResponse(code, statusMsg) {
+    console.log(`RESPONSE ${code}: ${statusMsg}`);
 }

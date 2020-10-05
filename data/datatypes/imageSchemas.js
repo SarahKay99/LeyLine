@@ -1,3 +1,4 @@
+const { interfaces } = require("mocha");
 /// <SUMMARY>
 /// Repo for one of ~5 datatypes, Image.
 /// ONLY SUPPORTS 2D/3D SHAPE ANNOTATIONS! 
@@ -25,7 +26,8 @@ let annotationSchema = new mongoose.Schema({
 // coords.count() gives the number of coordinates, num_points.
 
 let imageSchema = new mongoose.Schema({
-  img: { type: Buffer },
+  img: { type: Buffer, required: true },
+  size: { type: Number, required: true },
   address: { type: String, required: true },
   dimensions: { type: Boolean, required: true },                              // True if 2D, False if 3D
   categories: [{ type: mongoose.Schema.Types.ObjectId, ref: 'category' }],    // List of Foreign Keys

@@ -4,17 +4,22 @@ const express = require("express");
 const chroma = require("chroma-log");
 const bodyParser = require('body-parser');              // Handles ? & % @ encoding of weird characters.
 const cookieParser = require('cookie-parser');
-const mainRouter = require('./routes/main-routes');
-const authRouter = require('./routes/auth-routes');
 const session = require('express-session');
 const passport = require('passport');
 const flash = require('connect-flash');
 const { kStringMaxLength } = require('buffer');
 const authController = require('./controllers/authController');
+
+// routers
+const mainRouter = require('./routes/main-routes');
+const authRouter = require('./routes/auth-routes');
+
 let app = express();
 
 app.set("views", "./src/views");
-app.set("view engine", "ejs");app.use(bodyParser.urlencoded({
+app.set("view engine", "ejs"); 
+
+app.use(bodyParser.urlencoded({
   extended: false
 }));
 
@@ -55,32 +60,16 @@ app.get('/register', (req, res) => {
   res.render('register');
 })
 
-// Putting image in database
-app.post('/upload', (req, res) => {
-  console.log("=== Executing POST /upload ===");
-  if (req.files != null) {
-    try {
-      console.log("req.files != null: proceeding to save file...");
-      // save image to database
-      const img = req.files.uploadedImg;
-    }
-    catch(err) {
-      console.log(err.message);
-    }
-  }
-  else {
-    console.log("___POST /upload ERROR: req.files == null");
-  }
+app.get('/user_details', (req, res) => {
+  res.render('user_details');
 });
-
-app.post('/registerUser', authController.register_a_user);
 
 // REGISTERING ROUTERS
 app.use('/', mainRouter);
 app.use('/login', authRouter);
 
-// ERROR ROUTER
-app.get("/error", (req, res) => {
+// HTTP RESPONSE ROUTERS
+app.get('/error', (req, res) => {
   res.render("error");
 });
 
