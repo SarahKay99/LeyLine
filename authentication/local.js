@@ -7,8 +7,9 @@ const options = {};
 
 init();
 
-passport.use(new LocalStrategy(options, async (username, password, done) => {
-    repository.GetUser({username: username})
+passport.use(new LocalStrategy({ usernameField: "loginEmail", passwordField: "loginPassword" }, async (email, password, done) => {
+    console.log("___local.js executing");
+    repository.GetUser({ email: email })
         .then( async (user)=> {
             if(!user) {
                 return done(null, false); 

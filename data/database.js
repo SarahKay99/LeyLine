@@ -6,7 +6,7 @@ const database = (function () {
   let dbInstance = null;
 
   let _getDbInstance = function() {
-    let connectionString = process.env.CONNECTION || "mongodb://localhost:30000/bugDB";
+    let connectionString = process.env.CONNECTION || "mongodb://localhost:30000/leyLineDB";
     console.log(`Database Connection: ${connectionString}`);
 
     if (!dbInstance) {
@@ -23,7 +23,7 @@ const database = (function () {
         });
       return dbInstance = mongoose;
     }
-    else{
+    else {
         console.log("MongoDB Instance Already Exists");
         return dbInstance;
     }

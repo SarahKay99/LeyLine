@@ -7,14 +7,10 @@ function comparePassword(userPassword, databasePassword) {
     return bcrypt.compare(userPassword, databasePassword);
 };
 
-async function createEncryptedUser (username, password) {
+async function createEncryptedPassword(password) {
     const salt = await bcrypt.genSalt();
-    const hash = await bcrypt.hash(password, salt);
-    let user = {
-        username: username,
-        password: hash
-    }
-    return user;
+    const hash = bcrypt.hash(password, salt);       // Promise { <pending> }
+    return hash;
 }
 
 function loginRequired(req, res, next) {
@@ -28,5 +24,5 @@ function loginRequired(req, res, next) {
 module.exports = {
     loginRequired,
     comparePassword,
-    createEncryptedUser
+    createEncryptedPassword
 };

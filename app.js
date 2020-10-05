@@ -1,9 +1,8 @@
-// express Module: contains functions for building web apps & API's i.e. set(), get()
 const path = require('path');
 const fileUpload = require('express-fileupload');
 const express = require("express");
 const chroma = require("chroma-log");
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');              // Handles ? & % @ encoding of weird characters.
 const cookieParser = require('cookie-parser');
 const mainRouter = require('./routes/main-routes');
 const authRouter = require('./routes/auth-routes');
@@ -11,10 +10,13 @@ const session = require('express-session');
 const passport = require('passport');
 const flash = require('connect-flash');
 const { kStringMaxLength } = require('buffer');
+const authController = require('./controllers/authController');
 let app = express();
 
 app.set("views", "./src/views");
-app.set("view engine", "ejs");
+app.set("view engine", "ejs");app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
 app.use(cookieParser());
 
@@ -31,7 +33,8 @@ app.use(fileUpload());
 
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(flash());  
+
+app.use(flash());
 app.use(chroma);
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -70,13 +73,9 @@ app.post('/upload', (req, res) => {
   }
 });
 
-// Registering a user (see authController and authRepository)
-app.post('/register', async (req, res) => {
-  console.log("=== Executing POST /register ===");
+app.post('/registerUser', authController.register_a_user);
 
-});
-
-// MAIN URLS
+// REGISTERING ROUTERS
 app.use('/', mainRouter);
 app.use('/login', authRouter);
 
