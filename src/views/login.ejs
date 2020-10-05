@@ -2,24 +2,29 @@
 <html>
     <%- include('templates/head', {subtitle: "Login"}); -%>
     <body>
-        <%- include ('templates/header'); -%>
-        <div class="container">
-            <!--Begin form-->
-            <form class="form-signin center-content" 
-            method='post'
-            action='/login/loginUser'
-            style="text-align: center; display: inline-block; margin-top: 10em;">
-                <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-                <h1 class="h3 mb-3 font-weight-normal">Please log in</h1>
-                <input name="loginEmail" type="email" id="loginEmail" class="form-control" placeholder="Email address or Username" required autofocus="">
-                <br />
-                <input name="loginPassword" type="password" id="loginPassword" class="form-control" placeholder="Password" required>
-                <br />
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-                <p class="mt-5 mb-3 text-muted">© 2020-2021</p>
-            </form>
-        </div>
+        <div id="page-container">
+            <div id="content-wrap">
+                <%- include ('templates/header'); -%>
+                <div class="container" id="content-container">
+                    <!--Begin form-->
+                    <form class="form-signin center-content w-50" 
+                    method='post'
+                    action='/login/loginUser'
+                    style="text-align: center; margin-top: 10em;">
+                        <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+                        <h1 class="h3 mb-3 font-weight-normal">Please log in</h1>
+                        <input name="loginEmail" type="text" id="loginEmail" class="form-control" placeholder="Email address or Username" required autofocus="">
+                        <br>
+                        <input name="loginPassword" type="password" id="loginPassword" class="form-control" placeholder="Password" required>
+                        <br>
+                        <button class="btn btn-success" type='submit' role="button">Login</button>
+                        <button class="btn btn-danger">Back</button>
+                        <p class="mt-5 mb-3 text-muted">© 2020-2021</p>
+                    </form>
+                </div>
+            </div>
         
-        <%- include('templates/footer') %>
+            <%- include('templates/footer') %>
+        </div>
     </body>
 </html>

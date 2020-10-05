@@ -2,73 +2,77 @@
 <html>
     <%- include('templates/head', {subtitle: "Register"}); -%>
     <body>
-        <%- include ('templates/header'); -%>
-        <div class="container">
-            <!-- Begin form -->
-            <form class='form-control'
-            method='post'
-            action='/login/registerUser'
-            style='text-align: center; margin-top: 10em;'>
-                <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-                <h1 class="h3 mb-3 font-weight-normal">Please enter your details</h1>
-                <p>Don't worry, your personal data is 100% private with us.</p>
-                <hr>
+        <div id="page-container">
+            <div id="content-wrap">
+                <%- include ('templates/header'); -%>
+                <div class="container" id="content-container">
+                    <!-- Begin form -->
+                    <form class='form-control'
+                    method='post'
+                    action='/login/registerUser'
+                    style='text-align: center; margin-top: 10em;'>
+                        <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+                        <h1 class="h3 mb-3 font-weight-normal">Please enter your details</h1>
+                        <p>Don't worry, your personal data is 100% private with us.</p>
+                        <hr>
 
-                <div class="row">
-                    <div class="col">
+                        <div class="row">
+                            <div class="col">
 
-                        <label for="registerUsername">Username: </label>
-                        <input name="username" id="registerUsername" type="text" class="form-control" placeholder="Username" required>
-                        <p id="validate-username" class="validate-warning">Invalid username</p>
+                                <label for="registerUsername">Username: </label>
+                                <input name="username" id="registerUsername" type="text" class="form-control" placeholder="Username" required>
+                                <p id="validate-username" class="validate-warning">Invalid username</p>
 
-                        <label for="registerEmail">Email: </label>
-                        <input name="email" id="registerEmail" type="email" class="form-control" placeholder="Email address" required>
-                        <p id="validate-email" class="validate-warning">Invalid username</p>
+                                <label for="registerEmail">Email: </label>
+                                <input name="email" id="registerEmail" type="email" class="form-control" placeholder="Email address" required>
+                                <p id="validate-email" class="validate-warning">Invalid username</p>
 
-                    </div>
-                    <div class="col">
-                        <label for="registerPassword">Password:</label>
-                        <input name="password" id="registerPassword" type="password" class="form-control" placeholder="Password" required>
-                        <p id="validate-password" class="validate-warning">Invalid username</p>
+                            </div>
+                            <div class="col">
+                                <label for="registerPassword">Password:</label>
+                                <input name="password" id="registerPassword" type="password" class="form-control" placeholder="Password" required>
+                                <p id="validate-password" class="validate-warning">Invalid username</p>
 
-                        <label for="verifyPassword">Verify Password:</label>
-                        <input id="verifyPassword" type="password" class="form-control" placeholder="Verify Password" required>
-                        <p id="validate-verify-password" class="validate-warning">Invalid username</p>
-                    </div>
-                </div>
+                                <label for="verifyPassword">Verify Password:</label>
+                                <input id="verifyPassword" type="password" class="form-control" placeholder="Verify Password" required>
+                                <p id="validate-verify-password" class="validate-warning">Invalid username</p>
+                            </div>
+                        </div>
 
-                <br>
-                <hr />
-
-                <div class="row">
-                    <div class="col">
-                        <h6 class="h3 mb-3 font-weight-normal">Optional Details</h6>
-                        <p>You must provide these details at some point to give and receive payments.</p>
-                        <!-- This button should collapse the entire row -->
-                        <input type="checkbox" id="data-provide" name="data-provide" data-toggle="collapse" data-target="#multiCollapseExample1" role="button" aria-expanded="true" aria-controls="multiCollapseExample1">
-                        <label for="data-provide"> I'll provide this later.</label>
-                        <br />
+                        <br>
                         <hr />
 
-                        <!-- <div class="collapse show" id="multiCollapseExample1"> -->
-                            <label for="registerFirstName">First Name: </label>
-                            <input id="registerFirstName" name="firstName" type="text" class="form-control" placeholder="First Name">
+                        <div class="row">
+                            <div class="col">
+                                <h6 class="h3 mb-3 font-weight-normal">Optional Details</h6>
+                                <p>You must provide these details at some point to give and receive payments.</p>
+                                <!-- This button should collapse the entire row -->
+                                <input type="checkbox" id="data-provide" name="data-provide" data-toggle="collapse" data-target="#multiCollapseExample1" role="button" aria-expanded="true" aria-controls="multiCollapseExample1">
+                                <label for="data-provide"> I'll provide this later.</label>
+                                <br />
+                                <hr />
 
-                            <label for="registerLastName">Last Name: </label>
-                            <input id="registerLastName" name="lastName" type="text" class="form-control" placeholder="Last Name">
-                        <!-- </div> -->
-                    </div>
+                                <!-- <div class="collapse show" id="multiCollapseExample1"> -->
+                                    <label for="registerFirstName">First Name: </label>
+                                    <input id="registerFirstName" name="firstName" type="text" class="form-control" placeholder="First Name">
+
+                                    <label for="registerLastName">Last Name: </label>
+                                    <input id="registerLastName" name="lastName" type="text" class="form-control" placeholder="Last Name">
+                                <!-- </div> -->
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <!-- Submit button -->
+                        <button class="btn btn-success" type='submit' value="submit" role="button">Register</button>
+                        <button class="btn btn-danger">Back</button>
+                        <p class="mt-5 mb-3 text-muted">© 2020-2021</p>
+                    </form>
                 </div>
-
-                <br>
-
-                <!-- Submit button -->
-                <button class="btn btn-success" type='submit' value="submit" role="button">Register</button>
-                <button class="btn btn-danger">Back</button>
-                <p class="mt-5 mb-3 text-muted">© 2020-2021</p>
-            </form>
+            </div>
+            <%- include('templates/footer') %>
         </div>
-        <%- include('templates/footer') %>
         <script src="/javascripts/register.js"></script>
     </body>
 </html>

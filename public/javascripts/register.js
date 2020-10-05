@@ -67,7 +67,7 @@ $(document).ready(function(){
         if ($(this).val().match(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/) == null) {
             $(this).css("border-color", "#dc3545");
             passwordMsg.css("color", "#dc3545");
-            passwordMsg.text("Needs length of 8 characters with a number and special character.");
+            passwordMsg.text("Needs 8 character length with a number and special character.");
             passwordMsg.css("visibility", "visible");
         }
         else {
