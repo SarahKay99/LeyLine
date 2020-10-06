@@ -172,25 +172,51 @@ footer {
 }
 
 /* === USER_DETAILS.EJS === */
+#details-container {
+    margin-top: 5.8em;
+}
+
+#details-wrap {
+    padding-bottom: 3.5rem;
+}
+
+.details-tab {
+    padding-left: 2em;
+}
+
+#menu-items {
+    width: 100%;
+}
+
+#details-row p {
+    padding: 0 !important;
+}
+
+#profile-content {
+    margin-left: 0.5em;
+}
+
 #sidebar {
+    padding: 0 !important;
     height: 100vh;
-    background-color: lightgray;
+    background-color: #f2f2f2;
+    max-width: 15% !important;
 }
 
 #sidebar .list-group-item {
     border-radius: 0;
-    background-color: lightgray;
+    background-color: #f2f2f2;
     color: black;
     border-left: 0;
-    border-right: 0;
-    border-color: #2c2c2c;
+    border-right: 1px solid;
+    border-color: #e6e6e6;
     white-space: nowrap;
     text-decoration: none;
 }
 
 #sidebar .list-group-item:hover {
     color: white;
-    background-color: #222;
+    background-color: #bfbfbf;
 }
 
 /* highlight active menu */
@@ -274,8 +300,4 @@ footer {
        -o-transition-property: width;
           transition-property: width;
 
-}
-
-.left {
-    text-align: left;
 }
