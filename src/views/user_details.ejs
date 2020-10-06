@@ -7,17 +7,63 @@
                 <%- include ('templates/header'); -%>
                 <div class="container" id="content-container">
 
-                    <!-- Got this from Bootstrap Scrollspy -->
-                    <div id="list-example" class="list-group">
-                        <a class="list-group-item list-group-item-action" href="#list-item-1">User Information</a>
-                        <a class="list-group-item list-group-item-action" href="#list-item-2">Email</a>
-                        <a class="list-group-item list-group-item-action" href="#list-item-3">Security</a>
-                        <a class="list-group-item list-group-item-action" href="#list-item-4">Privacy</a>
-                        <a class="list-group-item list-group-item-action" href="#list-item-5">Payment Details</a>
-                        <a class="list-group-item list-group-item-action" href="#list-item-6">Bank Details</a>
-                        <a class="list-group-item list-group-item-action" href="#list-item-7">Crypto Wallets</a>
-                    </div>
+                    <!-- Code imported from https://medium.com/@TechVisually/vertical-accordion-sidebar-8cd0a1d9d2a5 -->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-3 col-xs-1 p-l-0 p-r-0 collapse in" id="sidebar">
+                                <!-- Items -->
+                                <div class="list-group panel">
+                                    <a href="#menu1" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-dashboard"></i> <span class="hidden-sm-down">User Details</span> </a>
+                                        <!-- Sub-items -->
+                                        <div class="collapse" id="menu1">
+                                            <a href="#menu1sub1" class="list-group-item" data-toggle="collapse" aria-expanded="false">Subitem 1 </a>
+                                            <div class="collapse" id="menu1sub1">
+                                                <a href="#" class="list-group-item" data-parent="#menu1sub1">Subitem 1 a</a>
+                                                <a href="#" class="list-group-item" data-parent="#menu1sub1">Subitem 2 b</a>
+                                                <a href="#menu1sub1sub1" class="list-group-item" data-toggle="collapse" aria-expanded="false">Subitem 3 c </a>
+                                                <a href="#" class="list-group-item" data-parent="#menu1sub1">Subitem 4 d</a>
+                                                <a href="#menu1sub1sub2" class="list-group-item" data-toggle="collapse"  aria-expanded="false">Subitem 5 e </a>
+                                            </div>
+                                            <a href="#" class="list-group-item" data-parent="#menu1"> - </a>
+                                            <a href="#" class="list-group-item" data-parent="#menu1"> - </a>
+                                        </div>
+                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-film"></i> <span class="hidden-sm-down">Email</span></a>
+                                    <a href="#menu3" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-book"></i> <span class="hidden-sm-down">Security</span></a>
+                                        <!-- Sub-items -->
+                                        <div class="collapse" id="menu3">
+                                            <a href="#" class="list-group-item" data-parent="#menu3">Verify Email</a>
+                                            <a href="#" class="list-group-item" data-toggle="#menu3">Set up 2FA</a>
+                                            <!-- <a href="#" class="list-group-item" data-parent="#menu3">3.3</a> -->
+                                        </div>
+                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-heart"></i> <span class="hidden-sm-down">Privacy</span></a>
+                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-list"></i> <span class="hidden-sm-down">Payment details</span></a>
+                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-clock-o"></i> <span class="hidden-sm-down">Deposit details</span></a>
+                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-th"></i> <span class="hidden-sm-down">Crypto wallets</span></a>
+                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-gear"></i> <span class="hidden-sm-down">Settings</span></a>
+                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-calendar"></i> <span class="hidden-sm-down"></span></a>
+                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="hidden-sm-down">Link</span></a>
+                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-bar-chart-o"></i> <span class="hidden-sm-down">Link</span></a>
+                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-star"></i> <span class="hidden-sm-down">Link</span></a>
+                                </div>
+                            </div>
 
+                            <!-- Sidebar Menu items -->
+                            <main class="col-md-9 col-xs-11 p-l-2 p-t-2">
+                                <a href="#sidebar" data-toggle="collapse">
+                                    <i class="fa fa-navicon fa-lg"></i>
+                                </a>
+                                <hr>
+                                <div class="page-header">
+                                    <h1>User Details</h1>
+                                </div>
+                                <p class="lead left">Edit your details here.</p>
+
+                                <label class="lead " for="">Username: </label>
+                                <label class="lead" for="">First Name: </label>
+                                <label class="lead" for="">Last Name: </label>
+                            </main>
+                        </div>
+                    </div>
                 </div>
 
             </div>
