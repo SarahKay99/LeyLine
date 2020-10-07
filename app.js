@@ -8,6 +8,8 @@ const session = require('express-session');
 const passport = require('passport');
 const flash = require('connect-flash');
 const { kStringMaxLength } = require('buffer');
+
+// controllers
 const authController = require('./controllers/authController');
 
 // routers
@@ -47,22 +49,6 @@ app.use('/components', express.static(__dirname + '/src/views/components'));
 //app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist'));
 //app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist'));
 //app.use('/dragula', express.static(__dirname + '/node_modules/dragula/dist'));
-
-app.get('/', (req, res) => {
-  res.redirect('index');
-});
-
-app.get('/login', (req, res) => {
-  res.render('login');
-});
-
-app.get('/register', (req, res) => {
-  res.render('register');
-})
-
-app.get('/user_details', (req, res) => {
-  res.render('user_details');
-});
 
 // REGISTERING ROUTERS
 app.use('/', mainRouter);

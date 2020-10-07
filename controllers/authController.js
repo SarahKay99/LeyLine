@@ -1,4 +1,5 @@
 const repo = require('../data/authRepository');
+const authModels = require('../viewModel/authViewModel');
 const authHelper = require('../authentication/authHelper');
 const passport = require('../authentication/local');
 
@@ -83,6 +84,24 @@ module.exports = {
                 })
             }
         }) (req, res, next);
+    },
+
+    // doesn't allow the user to visit the page unless they're logged in.
+    checkAuthenticated: (req, res, next) => {
+        console.log(`${req.isAuthenticated()}`);
+        if (req.isAuthenticated()) {
+            return next();
+        }
+        res.redirect('/login', authModels.getUserViewModel(req));
+    },
+
+    // doesn't allow logged in user to visit the page. They have to be non-authenticated.
+    checkNotAuthenticated: (req, res, next) => {
+        console.log("next = ", next);
+        if (req.isAuthenticated()) {
+            res.redirect('/');
+        }
+        next();
     },
 
     logout_a_user: (req, res, next) => {
