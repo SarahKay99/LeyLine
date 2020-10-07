@@ -13,65 +13,77 @@
                             <div class="col-md-3 col-xs-1 p-l-0 p-r-0 in" id="sidebar">
                                 <!-- Items -->
                                 <div class="list-group panel">
-                                    <a href="#menu1" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false">
+                                    <a id="side-btn-1" href="#profile" class="list-group-item collapsed" data-parent="#sidebar">
                                         <i class="fas fa-user"></i>
                                         <span class="hidden-sm-down">User Details</span> 
                                     </a>
-                                        <!-- Sub-items -->
-                                        <div class="collapse" id="menu1">
-                                            <a href="#menu1sub1" class="list-group-item" data-toggle="collapse" aria-expanded="false">Subitem 1 </a>
-                                            <div class="collapse" id="menu1sub1">
-                                                <a href="#" class="list-group-item" data-parent="#menu1sub1">Subitem 1 a</a>
-                                                <a href="#" class="list-group-item" data-parent="#menu1sub1">Subitem 2 b</a>
-                                                <a href="#menu1sub1sub1" class="list-group-item" data-toggle="collapse" aria-expanded="false">Subitem 3 c </a>
-                                                <a href="#" class="list-group-item" data-parent="#menu1sub1">Subitem 4 d</a>
-                                                <a href="#menu1sub1sub2" class="list-group-item" data-toggle="collapse"  aria-expanded="false">Subitem 5 e </a>
-                                            </div>
-                                            <a href="#" class="list-group-item" data-parent="#menu1"> - </a>
-                                            <a href="#" class="list-group-item" data-parent="#menu1"> - </a>
-                                        </div>
-                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar">
+                                    <a id="side-btn-2" href="#email" class="list-group-item collapsed" data-parent="#sidebar">
                                         <i class="far fa-envelope"></i> 
                                         <span class="hidden-sm-down">Email</span>
                                     </a>
-                                    <a href="#menu3" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false">
+                                    <a href="#security-menu" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false">
                                         <i class="fas fa-lock"></i>
                                         <span class="hidden-sm-down">Security</span>
                                     </a>
                                         <!-- Sub-items -->
-                                        <div class="collapse" id="menu3">
-                                            <a href="#" class="list-group-item" data-parent="#menu3">Verify Email</a>
-                                            <a href="#" class="list-group-item" data-toggle="#menu3">Set up 2FA</a>
+                                        <div class="collapse" id="security-menu">
+                                            <a id="side-btn-3" href="#verify" class="list-group-item" data-parent="#security-menu">Verify Email</a>
+                                            <a id="side-btn-4" href="#2fa" class="list-group-item" data-toggle="#security-menu">Set up 2FA</a>
                                             <!-- <a href="#" class="list-group-item" data-parent="#menu3">3.3</a> -->
                                         </div>
-                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar">
+                                    <a id="side-btn-5" href="#privacy" class="list-group-item collapsed" data-parent="#sidebar">
                                         <i class="fas fa-user-secret"></i> 
                                         <span class="hidden-sm-down">Privacy</span>
                                     </a>
-                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar">
+                                    <a id="side-btn-6" href="#payment" class="list-group-item collapsed" data-parent="#sidebar">
                                         <i class="fas fa-dollar-sign"></i> 
                                         <span class="hidden-sm-down">Payment details</span>
                                     </a>
-                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar">
+                                    <a id="side-btn-7" href="#deposit" class="list-group-item collapsed" data-parent="#sidebar">
                                         <i class="fas fa-piggy-bank"></i> 
                                         <span class="hidden-sm-down">Deposit details</span>
                                     </a>
-                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar">
+                                    <a id="side-btn-8" href="#wallets" class="list-group-item collapsed" data-parent="#sidebar">
                                         <i class="fas fa-wallet"></i> 
                                         <span class="hidden-sm-down">Crypto wallets</span>
                                     </a>
-                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-gear"></i> <span class="hidden-sm-down">Settings</span></a>
-                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-calendar"></i> <span class="hidden-sm-down"></span></a>
-                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-envelope"></i> <span class="hidden-sm-down">Link</span></a>
-                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-bar-chart-o"></i> <span class="hidden-sm-down">Link</span></a>
-                                    <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-star"></i> <span class="hidden-sm-down">Link</span></a>
+                                    <a id="side-btn-9" href="#settings" class="list-group-item collapsed" data-parent="#sidebar">
+                                        <i class="fa fa-gear"></i> 
+                                        <span class="hidden-sm-down">Settings</span>
+                                    </a>
                                 </div>
                             </div>
 
                             <!-- Sidebar Menu items -->
                             <main id="menu-items col">
                                 <div class="details-tab">
-                                    <%- include('templates/tabs/profile') -%>
+                                    <div id="tab-1">
+                                        <%- include('templates/tabs/profile') -%>
+                                    </div>
+                                    <div id="tab-2" style="display: none;">
+                                        <%- include('templates/tabs/email') -%>
+                                    </div>
+                                    <div id="tab-3" style="display: none;">
+                                        <%- include('templates/tabs/verify_email') -%>
+                                    </div>
+                                    <div id="tab-4" style="display: none;">
+                                        <%- include('templates/tabs/2fa') -%>
+                                    </div>
+                                    <div id="tab-5" style="display: none;">
+                                        <%- include('templates/tabs/privacy') -%>
+                                    </div>
+                                    <div id="tab-6" style="display: none;">
+                                        <%- include('templates/tabs/payment') -%>
+                                    </div>
+                                    <div id="tab-7" style="display: none;">
+                                        <%- include('templates/tabs/deposit') -%>
+                                    </div>
+                                    <div id="tab-8" style="display: none;">
+                                        <%- include('templates/tabs/wallets') -%>
+                                    </div>
+                                    <div id="tab-9" style="display: none;">
+                                        <%- include('templates/tabs/settings') -%>
+                                    </div>
                                 </div>
                             </main>
                         </div>
