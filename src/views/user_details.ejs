@@ -10,7 +10,7 @@
                     <!-- Code imported from https://medium.com/@TechVisually/vertical-accordion-sidebar-8cd0a1d9d2a5 -->
                     <div class="container-fluid">
                         <div class="row" id="details-row">
-                            <div class="col-md-3 col-xs-1 p-l-0 p-r-0 collapse in" id="sidebar">
+                            <div class="col-md-3 col-xs-1 p-l-0 p-r-0 in" id="sidebar">
                                 <!-- Items -->
                                 <div class="list-group panel">
                                     <a href="#menu1" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false">
@@ -69,13 +69,7 @@
                             </div>
 
                             <!-- Sidebar Menu items -->
-                            <main id="menu-items">
-                                <div style="text-align: left; padding-left: 2.5em; margin-top: 0.75em;">
-                                    <a href="#sidebar" data-toggle="collapse" id="sidebar-toggle">
-                                        <i class="fa fa-navicon fa-lg"></i>
-                                    </a>
-                                </div>
-                                <hr style="width: 95%;">
+                            <main id="menu-items col">
                                 <div class="details-tab">
                                     <%- include('templates/tabs/profile') -%>
                                 </div>
