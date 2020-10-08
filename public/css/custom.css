@@ -82,6 +82,11 @@ footer {
     padding-bottom: 0.5em;
 }
 
+.index-symbol {
+    font-size: 3em;
+    color: #6c757d;
+}
+
 #datatypes {
     margin-bottom: 1em;
 }
