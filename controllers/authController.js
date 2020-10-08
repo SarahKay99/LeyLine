@@ -93,7 +93,8 @@ module.exports = {
         if (req.isAuthenticated()) {
             return next();
         }
-        res.render('/login', authModels.getUserViewModel(req));
+        res.render('login', authModels.getUserViewModel(req));
+        return false;
     },
 
     // doesn't allow logged in user to visit the page. They have to be non-authenticated.
@@ -103,8 +104,9 @@ module.exports = {
         console.log("next = ", next);
         if (req.isAuthenticated()) {
             res.redirect('/');
+            return false;
         }
-        next();
+        return next();
     },
 
     logout_a_user: (req, res, next) => {
