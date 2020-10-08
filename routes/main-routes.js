@@ -9,6 +9,7 @@ const authModels = require('../viewModel/authViewModel');
 let router = express.Router();
 
 router.get('/', (req, res) => { 
+    console.log(req.session);
     res.render('index', authModels.getUserViewModel(req));
 });
 
@@ -16,7 +17,7 @@ router.get('/index', (req, res) => {
     res.render('index', authModels.getUserViewModel(req));
 }); 
 
-router.get('/login', (req, res) => {
+router.get('/login', authController.checkNotAuthenticated, (req, res) => {
     res.render('login', authModels.getUserViewModel(req));
 });
 
