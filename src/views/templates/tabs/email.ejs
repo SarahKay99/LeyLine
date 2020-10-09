@@ -1,0 +1,14 @@
+<div class="page-header">
+    <h1>User Details</h1>
+</div>
+<div id="profile-content">
+    <p class="lead">Edit your details here.</p>
+
+    <form>
+        <label class="lead" for="currentEmail">Current Email</label>
+        <span class="hidden-sm-down"><%= userDetails.email %></span>
+
+        <label class="lead" for="newEmail">New Email:</label>
+        <input name="currentEmail" id="newEmail" type="text" class="form-control" placeholder='<%= userDetails.email %>'>
+    </form>
+</div>

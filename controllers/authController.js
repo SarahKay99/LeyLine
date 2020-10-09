@@ -88,20 +88,25 @@ module.exports = {
 
     // doesn't allow the user to visit the page unless they're logged in.
     checkAuthenticated: (req, res, next) => {
-        console.log(`${req.isAuthenticated()}`);
+        console.log("=== EXECUTING authController.checkAuthenticated() ===");
+        // console.log(`${req.isAuthenticated()}`);
         if (req.isAuthenticated()) {
             return next();
         }
-        res.redirect('/login', authModels.getUserViewModel(req));
+        res.render('login', authModels.getUserViewModel(req));
+        return false;
     },
 
     // doesn't allow logged in user to visit the page. They have to be non-authenticated.
     checkNotAuthenticated: (req, res, next) => {
+        console.log("=== EXECUTING authController.checkNotAuthenticated() ===");
+        console.log("session =", req.session);
         console.log("next = ", next);
         if (req.isAuthenticated()) {
             res.redirect('/');
+            return false;
         }
-        next();
+        return next();
     },
 
     logout_a_user: (req, res, next) => {
