@@ -8,6 +8,10 @@ const authModels = require('../viewModel/authViewModel');
 
 let router = express.Router();
 
+router.get('/error', (req, res) => {
+    res.render('error', authModels.getUserViewModel(req));
+});
+
 router.get('/', (req, res) => { 
     console.log(req.session);
     res.render('index', authModels.getUserViewModel(req));

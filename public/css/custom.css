@@ -176,6 +176,11 @@ footer {
     margin-top: 10em;
 }
 
+.content-container {
+    text-align: center;
+    margin-top: 10em;
+}
+
 /* === USER_DETAILS.EJS === */
 #details-container {
     width: 85%;
