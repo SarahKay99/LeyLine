@@ -1,7 +1,7 @@
 <div class="fixed-top w-100">
     <nav class="navbar navbar-light topbar" style="background-color: #c6c5d4;">
         <a class="navbar-brand" href="/">Logo Here</a>
-        <span>Start Earning Today!</span>
+        <span style="margin-left: 18em;">Start Earning Today!</span>
 
         <!-- Check if user is logged in, to determine which form to show. -->
         <!-- IF: -->
@@ -9,14 +9,14 @@
             <form>
                 <span>Welcome, <%= userDetails.username %></span>
                 <button class="btn btn-sm btn-outline-secondary standard-btn" type="button" onclick="location.href = 'user_details'">
-                    <i class="fas fa-sign-in-alt"></i> Profile & Settings
+                    <i class="fas fa-user"></i> Profile & Settings
                 </button>
 
                 <button method='post'
                 action='/'
                 class="btn btn-sm btn-outline-secondary standard-btn" 
                 type="button">
-                    <i class="fas fa-user-plus"></i> Log out
+                    <i class="fas fa-sign-out-alt"></i> Log out
                 </button>
             </form>
         <% } else { %>

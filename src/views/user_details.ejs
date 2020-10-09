@@ -13,8 +13,8 @@
                             <div class="col-md-3 col-xs-1 p-l-0 p-r-0 in" id="sidebar">
                                 <!-- Items -->
                                 <div class="list-group panel">
-                                    <a id="side-btn-1" href="#profile" class="list-group-item collapsed" data-parent="#sidebar">
-                                        <i class="fas fa-user"></i>
+                                    <a id="side-btn-1" href="#profile" class="list-group-item collapsed active-side-btn" data-parent="#sidebar">
+                                        <i class="fas fa-user-edit"></i> 
                                         <span class="hidden-sm-down">User Details</span>
                                     </a>
                                     <a id="side-btn-2" href="#email" class="list-group-item collapsed" data-parent="#sidebar">
@@ -55,8 +55,12 @@
                             </div>
 
                             <!-- Sidebar Menu items -->
-                            <main id="menu-items col">
+                            <main id="menu-items" class="col">
                                 <div class="details-tab">
+                                    <div class="page-header">
+                                        <h1>User Details</h1>
+                                    </div>
+                                    <hr>
                                     <div id="tab-1">
                                         <%- include('templates/tabs/profile') -%>
                                     </div>

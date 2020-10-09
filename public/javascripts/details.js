@@ -4,9 +4,11 @@ $(document).ready(function() {
         var num = id.split("-")[2];
 
         $(`#tab-${num}`).show();
+        $(`#side-btn-${num}`).addClass("active-side-btn");
 
         for (var i = 1; i < 10; i++) {
             if (i != num) {
+                $(`#side-btn-${i}`).removeClass("active-side-btn");
                 $(`#tab-${i}`).hide();
             }
         }
