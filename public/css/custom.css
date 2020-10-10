@@ -178,7 +178,7 @@ footer {
 
 /* === USER_DETAILS.EJS === */
 #details-container {
-    width: 85%;
+    width: 100%;
     margin-top: 5.8em;
 }
 
@@ -187,11 +187,14 @@ footer {
 }
 
 .details-tab {
-    padding-left: 2em;
+    margin: 0 auto;
+    width: 70%;
 }
 
 #menu-items {
+    padding-top: 2em;
     width: 100%;
+    margin-right: 15%;
 }
 
 #details-row p {
@@ -314,7 +317,25 @@ footer {
     border-color: #222 !important;
 }
 
-.name-input {
-    width: 49.7% !important;
+.profile-input {
+    width: 96% !important;
     display: inline-block !important;
+}
+
+.name-input {
+    width: 47.8% !important;
+    display: inline-block !important;
+}
+
+.edit-btn {
+    color: #212529 !important;
+    border: none !important;
+    border-radius: 0px !important;
+    background: none !important;
+    padding: 0 !important;
+}
+
+#sidebar-btn-group {
+    position: fixed; 
+    width: 15%;
 }

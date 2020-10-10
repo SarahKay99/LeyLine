@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <%- include('templates/head', {subtitle: "User Details"}); -%>
+    <%- include('templates/head', {subtitle: userDetails.username }); -%>
     <body>
         <div id="page-container">
             <div id="details-wrap">
@@ -12,7 +12,7 @@
                         <div class="row" id="details-row">
                             <div class="col-md-3 col-xs-1 p-l-0 p-r-0 in" id="sidebar">
                                 <!-- Items -->
-                                <div class="list-group panel">
+                                <div id="sidebar-btn-group" class="list-group panel">
                                     <a id="side-btn-1" href="#profile" class="list-group-item collapsed active-side-btn" data-parent="#sidebar">
                                         <i class="fas fa-user-edit"></i> 
                                         <span class="hidden-sm-down">User Details</span>
@@ -61,32 +61,8 @@
                                         <h1>User Details</h1>
                                     </div>
                                     <hr>
-                                    <div id="tab-1">
+                                    <div>
                                         <%- include('templates/tabs/profile') -%>
-                                    </div>
-                                    <div id="tab-2" style="display: none;">
-                                        <%- include('templates/tabs/email') -%>
-                                    </div>
-                                    <div id="tab-3" style="display: none;">
-                                        <%- include('templates/tabs/verify_email') -%>
-                                    </div>
-                                    <div id="tab-4" style="display: none;">
-                                        <%- include('templates/tabs/2fa') -%>
-                                    </div>
-                                    <div id="tab-5" style="display: none;">
-                                        <%- include('templates/tabs/privacy') -%>
-                                    </div>
-                                    <div id="tab-6" style="display: none;">
-                                        <%- include('templates/tabs/payment') -%>
-                                    </div>
-                                    <div id="tab-7" style="display: none;">
-                                        <%- include('templates/tabs/deposit') -%>
-                                    </div>
-                                    <div id="tab-8" style="display: none;">
-                                        <%- include('templates/tabs/wallets') -%>
-                                    </div>
-                                    <div id="tab-9" style="display: none;">
-                                        <%- include('templates/tabs/settings') -%>
                                     </div>
                                 </div>
                             </main>

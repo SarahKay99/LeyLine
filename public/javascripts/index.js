@@ -33,22 +33,4 @@ $(document).ready(function() {
             $("#img-preview").css("display", "block");
         }
     });
-
-    var dropdownHidden = true;
-
-    $("#dropdown-btn").click(function() {
-        if (dropdownHidden) {
-            $("#dropdown-btn-label").html("<span><i class=\"fas fa-chevron-up\"></i></span>");
-            dropdownHidden = false;
-        }
-        else {
-            $("#dropdown-btn-label").html("<span><i class=\"fas fa-chevron-down\"></i></span>");
-            dropdownHidden = true;
-        }
-    });
-
-    $("#dropdown-container").focusout(function() {
-        $("#dropdown-btn-label").html("<span><i class=\"fas fa-chevron-down\"></i></span>");
-        dropdownHidden = true;
-    });
 });

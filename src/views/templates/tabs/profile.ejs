@@ -1,19 +1,20 @@
 <div id="profile-content">
-    <p class="lead">Edit your details here.</p>
+    <p class="lead">You can view and edit your details here.</p>
 
     <form>
         <label class="lead" for="currentUsername">Username: </label>
         <span class="hidden-sm-down"><%= userDetails.username %></span>
-        <span class="lead">
-            <a href="#edit-username" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Edit">
-                <!--<i class="far fa-edit"></i>-->
-                <i class="fas fa-pen"></i>
-            </a>
-        </span>
         <br>
 
-        <label class="lead" for="newUsername">New Username:</label>
-        <input name="currentUsername" id="newUsername" type="text" class="form-control" placeholder='<%= userDetails.username %>'>
+        <label class="lead" for="newUsername">Edit Username:</label>
+        <span>
+            <input id="profile-input-1" disabled name="currentUsername" id="newUsername" type="text" class="form-control profile-input" placeholder='<%= userDetails.username %>'>
+            <span class="lead">
+                <a id="edit-btn-1" href="#edit-username" class="btn btn-primary edit-btn" data-toggle="tooltip" data-placement="right" title="Edit">
+                    <i class="far fa-edit lead"></i>
+                </a>
+            </span>
+        </span>
         <br>
         <label class="lead" for="">Name: </label> 
         <% if (userDetails.firstName == null || userDetails.lastName == null) { %>
@@ -24,16 +25,38 @@
         <br>
 
         <label class="lead">Edit Name:</label><br>
-        <% if (userDetails.firstName == null) { %>
-            <input name="currentFirstName" id="newFirstName" type="text" class="form-control name-input" placeholder='First name'>
-        <% } else { %>
-            <input name="currentFirstName" id="newFirstName" type="text" class="form-control name-input" placeholder='<%= userDetails.firstName %>'>
-        <% } %>
-        <% if (userDetails.lastName == null) { %>
-            <input name="currentlastName" id="newLastName" type="text" class="form-control name-input" placeholder='Last name'>
-        <% } else { %>
-            <input name="currentLastName" id="newLastName" type="text" class="form-control name-input" placeholder='<%= userDetails.lastName %>'>
-        <% } %>
+        <span>
+            <% if (userDetails.firstName == null) { %>
+                <input id="profile-input-2-a" disabled name="currentFirstName" id="newFirstName" type="text" class="form-control name-input" placeholder='First name'>
+            <% } else { %>
+                <input id="profile-input-2-a" disabled name="currentFirstName" id="newFirstName" type="text" class="form-control name-input" placeholder='<%= userDetails.firstName %>'>
+            <% } %>
+            <% if (userDetails.lastName == null) { %>
+                <input id="profile-input-2-b" disabled name="currentlastName" id="newLastName" type="text" class="form-control name-input" placeholder='Last name'>
+            <% } else { %>
+                <input id="profile-input-2-b" disabled name="currentLastName" id="newLastName" type="text" class="form-control name-input" placeholder='<%= userDetails.lastName %>'>
+            <% } %>
+            <span class="lead">
+                <a id="edit-btn-2" href="#edit-username" class="btn btn-primary edit-btn" data-toggle="tooltip" data-placement="right" title="Edit">
+                    <i class="far fa-edit lead"></i>
+                </a>
+            </span>
+        </span>
+        <br><br>
+
+        <label class="lead" for="currentEmail">Email</label>
+        <span class="hidden-sm-down"><%= userDetails.email %></span>
+        <br>
+
+        <label class="lead" for="newEmail">Edit Email:</label>
+        <span>
+            <input id="profile-input-3" disabled name="currentEmail" id="newEmail" type="text" class="form-control profile-input" placeholder='<%= userDetails.email %>'>
+            <span class="lead">
+                <a id="edit-btn-3" href="#edit-username" class="btn btn-primary edit-btn" data-toggle="tooltip" data-placement="right" title="Edit">
+                    <i class="far fa-edit lead"></i>
+                </a>
+            </span>
+        </span>
         <br><br>
 
         <button class="btn btn-success form-control" type='submit' value="submit" role="button">Update</button>
