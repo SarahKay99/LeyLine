@@ -56,7 +56,7 @@ app.use('/login', authRouter);
 
 // HTTP RESPONSE ROUTERS
 app.get('/error', (req, res) => {
-  res.render("error");
+  res.render('error', authModels.getUserViewModel(req));
 });
 
 module.exports = app;

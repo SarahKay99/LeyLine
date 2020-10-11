@@ -4,6 +4,9 @@ const authHelpers = require('../authentication/authHelper');
 
 let router = express.Router();
 
+router.get('/error', (req, res) => {
+    res.render('error');
+});
 router.post('/registerUser', authController.register_a_user);
 router.post('/loginUser', authController.login_a_user);
 router.get('/logout', authHelpers.loginRequired, authController.logout_a_user);

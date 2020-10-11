@@ -1,4 +1,18 @@
-<%- include ('templates/header'); -%>
-<div class="jumbotron">
-    <h3>Something went wrong!</h3>
-</div>
+<!DOCTYPE html>
+<html>
+<%- include ('templates/head', {subtitle: "Error"}); -%>
+<body>
+    <div id="page-container">
+        <div id="content-wrap">
+            
+            <%- include ('templates/header'); -%>
+            <div class="content-container">
+                <div class="jumbotron">
+                    <h3>Something went wrong!</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

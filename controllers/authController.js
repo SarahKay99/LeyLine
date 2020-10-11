@@ -63,23 +63,23 @@ module.exports = {
 
             if (err) {
                 handleResponse(500, 'error');
-                res.redirect("error");
+                res.redirect('../error');
             }
             if (!userReturn) {
                 handleResponse(404, 'User not found');
-                res.redirect("error");
+                res.redirect('../error');
             }
             if (userReturn) {
                 req.logIn(userReturn, (err) => {
                     if(err) {
-                        res.redirect("../error");
-                        handleResponse(500, 'error');
+                        res.redirect('../error');
+                        handleResponse(500, 'login/error');
                     }
                     else {
                         handleResponse(200, 'success');
                         console.log(`___authController.js user ${userReturn.username} successfully logged in!`);
                         
-                        res.redirect("../index");
+                        res.redirect('../index');
                     }
                 })
             }
