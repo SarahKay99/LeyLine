@@ -22,21 +22,31 @@ $(document).ready(function() {
             if ($('#profile-input-2-a').prop("disabled") && $('#profile-input-2-b').prop("disabled")) {
                 $('#profile-input-2-a').prop("disabled", false);
                 $('#profile-input-2-b').prop("disabled", false);
+                $(`#edit-btn-${num} i`).css("color", "rgb(170, 170, 170)");
+                $(`#edit-warning-${num}`).text("Editing...");
+                $(`#edit-btn-${num}`).attr('data-original-title', "Cancel").tooltip('show');
             }
             else {
                 $('#profile-input-2-a').prop("disabled", true);
                 $('#profile-input-2-b').prop("disabled", true);
+                $(`#edit-btn-${num} i`).css("color", "black");
+                $(`#edit-warning-${num}`).text("");
+                $(`#edit-btn-${num}`).attr('data-original-title', "Edit").tooltip('show');
             }
         }
         else {
             if ($(`#profile-input-${num}`).prop("disabled")) {
                 $(`#profile-input-${num}`).prop("disabled", false);
+                $(`#edit-btn-${num} i`).css("color", "rgb(170, 170, 170)");
+                $(`#edit-warning-${num}`).text("Editing...");
+                $(`#edit-btn-${num}`).attr('data-original-title', "Cancel").tooltip('show');
             }
             else {
                 $(`#profile-input-${num}`).prop("disabled", true);
+                $(`#edit-btn-${num} i`).css("color", "black");
+                $(`#edit-warning-${num}`).text("");
+                $(`#edit-btn-${num}`).attr('data-original-title', "Edit").tooltip('show');
             }
         }
-
-        $(`#edit-btn-${num}`).html("<i class=\"far fa-times-circle\"></i>");
     });
 });

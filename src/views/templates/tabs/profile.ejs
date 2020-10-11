@@ -2,11 +2,12 @@
     <p class="lead">You can view and edit your details here.</p>
 
     <form>
-        <label class="lead" for="currentUsername">Username: </label>
+        <label id="profile" class="lead" for="currentUsername">Username: </label>
         <span class="hidden-sm-down"><%= userDetails.username %></span>
         <br>
 
         <label class="lead" for="newUsername">Edit Username:</label>
+        <span id="edit-warning-1" class="edit-warning"></span>
         <span>
             <input id="profile-input-1" disabled name="currentUsername" id="newUsername" type="text" class="form-control profile-input" placeholder='<%= userDetails.username %>'>
             <span class="lead">
@@ -24,7 +25,7 @@
         <% } %>
         <br>
 
-        <label class="lead">Edit Name:</label><br>
+        <label class="lead">Edit Name:</label> <span id="edit-warning-2" class="edit-warning"></span><br>
         <span>
             <% if (userDetails.firstName == null) { %>
                 <input id="profile-input-2-a" disabled name="currentFirstName" id="newFirstName" type="text" class="form-control name-input" placeholder='First name'>
@@ -44,11 +45,12 @@
         </span>
         <br><br>
 
-        <label class="lead" for="currentEmail">Email</label>
+        <label id="email" class="lead" for="currentEmail">Email</label>
         <span class="hidden-sm-down"><%= userDetails.email %></span>
         <br>
 
         <label class="lead" for="newEmail">Edit Email:</label>
+        <span id="edit-warning-3" class="edit-warning"></span>
         <span>
             <input id="profile-input-3" disabled name="currentEmail" id="newEmail" type="text" class="form-control profile-input" placeholder='<%= userDetails.email %>'>
             <span class="lead">
@@ -58,7 +60,22 @@
             </span>
         </span>
         <br><br>
-
+        <label id="verify" class="lead">Verification</label>
+        <br>
+        <label id="2fa" class="lead">Set up 2FA</label>
+        <br>
+        <label id="privacy" class="lead">Privacy</label>
+        <br>
+        <label id="payment" class="lead">Payment Details</label>
+        <br>
+        <label id="deposit" class="lead">Deposit Details</label>
+        <br>
+        <label id="wallets" class="lead">Crypto wallets</label>
+        <br>
+        <label id="settings" class="lead">Settings</label>
+        <br>
+        <a href="#" id="reset-btn" class="lead">Reset</a>
+        <hr>
         <button class="btn btn-success form-control" type='submit' value="submit" role="button">Update</button>
     </form>
 </div>

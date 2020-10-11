@@ -339,3 +339,7 @@ footer {
     position: fixed; 
     width: 15%;
 }
+
+.edit-warning {
+    color: #ffc107;
+}
