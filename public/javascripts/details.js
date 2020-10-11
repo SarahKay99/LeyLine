@@ -49,4 +49,8 @@ $(document).ready(function() {
             }
         }
     });
+
+    $("#delete-confirm").focusout(function() {
+        
+    });
 });

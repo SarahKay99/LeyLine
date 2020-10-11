@@ -62,6 +62,8 @@
         <br><br>
         <label id="verify" class="lead">Verification</label>
         <br>
+        <span style="color:#dc3545;"><i class="fas fa-exclamation-triangle"></i> You are not verified!</span>
+        <br>
         <label id="2fa" class="lead">Set up 2FA</label>
         <br>
         <label id="privacy" class="lead">Privacy</label>
@@ -72,7 +74,34 @@
         <br>
         <label id="wallets" class="lead">Crypto wallets</label>
         <br>
-        <label id="settings" class="lead">Settings</label>
+        <label id="settings" class="lead">Settings</label><br>
+        <button class="btn btn-danger" role="button" data-toggle="modal" data-target="#delete-modal">
+            <i class="far fa-trash-alt"></i> Delete account
+        </button>
+
+        <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="delete-modal-label" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="delete-modal-label">Are you sure?</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  If you choose to delete your account this action cannot be undone. 
+                  Furthermore, you will be unable to access any tokens that have not been transfered.
+                  If you are sure, please type your username (case sensitive) below:
+                  <input type="text" class="form-control" id="delete-confirm" style="margin-top: 1em;">
+                </div>
+                <div class="modal-footer">
+                  <button disabled id="delete-confirm-btn" type="button" class="btn btn-danger">Delete</button>  
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         <br>
         <a href="#" id="reset-btn" class="lead">Reset</a>
         <hr>
