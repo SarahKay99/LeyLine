@@ -50,7 +50,12 @@ $(document).ready(function() {
         }
     });
 
-    $("#delete-confirm").focusout(function() {
-        
+    $("#delete-confirm").keyup(function() {
+        if ($(this).val() == $("#current-username").text()) {
+            $("#delete-confirm-btn").prop("disabled", false);
+        }
+        else {
+            $("#delete-confirm-btn").prop("disabled", true);
+        }
     });
 });
