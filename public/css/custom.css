@@ -348,3 +348,8 @@ footer {
 .edit-warning {
     color: #ffc107;
 }
+
+#user-progress {
+    height: 2em;
+    border: none !important;
+}
