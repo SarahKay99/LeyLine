@@ -1,6 +1,8 @@
 <div id="profile-content">
     <p class="lead">You can view and edit your details here.</p>
-    <progress id="user-progress" class="form-control" value="32" max="100">32%</progress>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
     <form>
         <label id="profile" class="lead" for="currentUsername">Username: </label>
         <span id="current-username" class="hidden-sm-down"><%= userDetails.username %></span>
@@ -68,9 +70,10 @@
         </button>
         <br>
         <label id="2fa" class="lead">2FA</label><br>
-        <button type="button" class="btn btn-primary">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#2fa-modal">
             <i class="fas fa-key"></i> Set up 2FA
         </button>
+        <%- include('2fa_modal') -%>
         <br>
         <label id="privacy" class="lead">Privacy</label>
         <br>
