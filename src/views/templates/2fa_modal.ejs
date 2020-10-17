@@ -8,13 +8,44 @@
                 </button>
             </div>
             <div class="modal-body">
-                <ul class="nav nav-tabs">
-                    <li class="nav-item"><a class="nav-link active" href="#">Mobile Phone</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Security Question</a></li>
+                <ul id="2fa-tabs" class="nav nav-tabs">
+                    <li class="nav-item"><a class="nav-link active" href="#phone-2fa">Mobile Phone</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#question-2fa">Security Question</a></li>
                 </ul>
-                <form class="form-control">
-                    <input type="text" name="phone-number" class="form-control">
-                </form>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active in" id="phone-2fa" aria-labelledby="phone-2fa-tab">
+                        <form>
+                            <br>
+                            <label>Enter your phone number:</label>
+                            <input type="tel" class="form-control" name="phone-field" id="phone-field" pattern="+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|
+                            2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|
+                            4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}">
+                        </form>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="question-2fa" aria-labelledby="question-2fa-tab">
+                        <form>
+                            <br>
+                            <span><input checked id="custom" value="custom" type="radio" name="security-choice"><h6>Write your own:</h6></span>
+                            <fieldset id="custom-wrapper">
+                                <input placeholder="Make it difficult to guess!" class="form-control" type="text" name="question-custom" id="question-customer">
+                            </fieldset>
+                            <div class="text-divider">OR</div>
+                            <input id="default" value="default" type="radio" name="security-choice"><h6>Choose a question from below:</h6>
+                            <fieldset id="default-wrapper" disabled>
+                                <select id="security-questions" class="form-control" name="security-questions">
+                                    <option value="security-question-1">What is your mother's maiden name?</option>
+                                    <option value="security-question-2">What is your oldest sibling's middle name?</option>
+                                    <option value="security-question-3">What was the name of your second pet?</option>
+                                    <option value="security-question-4">What street did you live on in third grade?</option>
+                                    <option value="security-question-5">What school did you attend for sixth grade?</option>
+                                </select>
+                            </fieldset>
+                            <hr>
+                            <label for="question-answer">Answer:</label>
+                            <input class="form-control" type="text" name="question-answer" id="question-answer">
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button id="2fa-confirm-btn" type="button" class="btn btn-success">Confirm</button>  

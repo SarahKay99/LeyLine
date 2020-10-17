@@ -1,4 +1,10 @@
 $(document).ready(function() {
+    var completableFields = 10;
+    var progress = $("#profile-progress");
+    progress.css("width", "75%");
+});
+
+$(document).ready(function() {
     $("[id^=side-btn-]").click(function() {
         var id = $(this).attr('id');
         var num = id.split("-")[2];
@@ -56,6 +62,25 @@ $(document).ready(function() {
         }
         else {
             $("#delete-confirm-btn").prop("disabled", true);
+        }
+    });
+
+    $('#2fa-tabs a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    });
+
+    $('#custom').click(function() {
+        if ($("input[id='custom']:checked").val()) {
+            $("#custom-wrapper").prop("disabled", false);
+            $("#default-wrapper").prop("disabled", true);
+        }
+    });
+
+    $('#default').click(function() {
+        if ($("input[id='default']:checked").val()) {
+            $("#custom-wrapper").prop("disabled", true);
+            $("#default-wrapper").prop("disabled", false);
         }
     });
 });
