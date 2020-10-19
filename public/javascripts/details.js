@@ -83,4 +83,13 @@ $(document).ready(function() {
             $("#default-wrapper").prop("disabled", false);
         }
     });
+
+    $('#phone-field').keyup(function() {
+        if ($(this).val().match(/^\+[1-9]{1}[0-9]{1,14}$/) == null) {
+            $('#phone-warning').text("Make sure you enter a valid phone number.");
+        }
+        else {
+            $('#phone-warning').text("");
+        }
+    });
 });

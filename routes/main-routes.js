@@ -18,6 +18,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/index', (req, res) => {
+    console.log(req.flash('login-msg'));
     res.render('index', authModels.getUserViewModel(req));
 }); 
 

@@ -78,7 +78,7 @@ module.exports = {
                     else {
                         handleResponse(200, 'success');
                         console.log(`___authController.js user ${userReturn.username} successfully logged in!`);
-                        
+                    
                         res.redirect('../index');
                     }
                 })
