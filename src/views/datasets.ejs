@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <%- include('templates/head'); -%>
+    <%- include('templates/head', {subtitle: "Datasets"}); -%>
     <body>
         
         <div id="page-container">
@@ -8,7 +8,7 @@
                 <%- include ('templates/header'); -%>
 
                 <div class="container" id="content-container">
-                    
+                    <%- include('templates/dataset') -%>
                 </div>
             </div>
         </div>

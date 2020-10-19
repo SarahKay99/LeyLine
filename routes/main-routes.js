@@ -43,5 +43,9 @@ router.get('/user_details', authController.checkAuthenticated, (req, res) => {
 
 router.post('/upload', imageController.upload_photo); 
 
+router.get('/datasets', (req, res) => {
+    res.render('datasets', authModels.getUserViewModel(req));
+});
+
 
 module.exports = router;
