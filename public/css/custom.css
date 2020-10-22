@@ -409,8 +409,8 @@ footer {
 
 @media (min-width: 992px) {
     .animate {
-        animation-duration: 1s;
-        -webkit-animation-duration: 1s;
+        animation-duration: 0.5s;
+        -webkit-animation-duration: 0.5s;
         animation-fill-mode: both;
         -webkit-animation-fill-mode: both;
     }
@@ -425,10 +425,10 @@ footer {
       transform:translateY(5.75em);
       opacity: 1;
     }
-    /*0% {
+    0% {
       transform: translateY(3em);
       opacity: 0;
-    }*/
+    }
   }
   
   @-webkit-keyframes slidein {
