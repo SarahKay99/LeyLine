@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     // ../index.ejs
     var carousel = $('#carouselExampleIndicators');
     $('#one').click(function() {

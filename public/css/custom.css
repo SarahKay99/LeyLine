@@ -385,3 +385,68 @@ footer {
     border: 1px rgba(0, 0, 0, .35) solid;
     border-radius: 5px;
 }
+
+.legend {
+    display: inline-block;
+    border: solid 2px #5E5E5E;
+    border-radius: 3px;
+    width: 1.25em;
+    height: 1.15em;
+    margin-right: 1.5em;
+}
+
+#data-type-legend {
+    background-color: #3AA6DD;
+}
+
+#annotation-type-legend {
+    background-color: #99D5CA;
+}
+
+#community-status-legend {
+    background-color: #FF8F80;
+}
+
+@media (min-width: 992px) {
+    .animate {
+        animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+        animation-fill-mode: both;
+        -webkit-animation-fill-mode: both;
+    }
+}
+    
+  @keyframes slidein {
+    0% {
+      transform: translateY(3.35em);
+      opacity: 0;
+    }
+    100% {
+      transform:translateY(5.75em);
+      opacity: 1;
+    }
+    /*0% {
+      transform: translateY(3em);
+      opacity: 0;
+    }*/
+  }
+  
+  @-webkit-keyframes slidein {
+    0% {
+      -webkit-transform: transform;
+      -webkit-opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      -webkit-opacity: 1;
+    }
+    0% {
+      -webkit-transform: translateY(1em);
+      -webkit-opacity: 0;
+    }
+  }
+  
+  .slidein {
+    -webkit-animation-name: slidein;
+    animation-name: slidein;
+  }
