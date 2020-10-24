@@ -1,0 +1,189 @@
+#details-container {
+    width: 100%;
+    margin-top: 5.8em;
+}
+
+#details-wrap {
+    padding-bottom: 5rem;
+}
+
+.details-tab {
+    margin: 0 auto;
+    width: 70%;
+}
+
+#menu-items {
+    padding-top: 2em;
+    width: 100%;
+    margin-right: 15%;
+}
+
+#details-row p {
+    padding: 0 !important;
+}
+
+#profile-content {
+    margin-left: 0.5em;
+}
+
+#sidebar {
+    padding: 0 !important;
+    background-color: #f2f2f2;
+    max-width: 15% !important;
+    margin-bottom: -5rem;
+}
+
+#sidebar .list-group-item {
+    border-radius: 0;
+    background-color: #f2f2f2;
+    color: black;
+    border-left: 0;
+    border-right: 1px solid;
+    border-color: #e6e6e6;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+#sidebar .list-group-item:hover {
+    color: white;
+    background-color: #bfbfbf;
+}
+
+/* highlight active menu */
+#sidebar .list-group-item:not(.collapsed) {
+    background-color: lightgray;
+}
+
+/* closed state */
+#sidebar .list-group .list-group-item[aria-expanded="false"]::after {
+  content: " \f0d7";
+  font-family: FontAwesome;
+  display: inline;
+  text-align: right;
+  padding-left: 5px;
+}
+
+/* open state */
+#sidebar .list-group .list-group-item[aria-expanded="true"] {
+    color: white;
+    background-color: #222;
+}
+#sidebar .list-group .list-group-item[aria-expanded="true"]::after {
+  content: " \f0da";
+  font-family: FontAwesome;
+  display: inline;
+  text-align: right;
+  padding-left: 5px;
+}
+
+/* level 1*/
+#sidebar .list-group .collapse .list-group-item  {
+  padding-left: 20px;
+}
+
+/* level 2*/
+#sidebar .list-group .collapse > .collapse .list-group-item {
+  padding-left: 30px;
+}
+
+/* level 3*/
+#sidebar .list-group .collapse > .collapse > .collapse .list-group-item {
+  padding-left: 40px;
+}
+
+@media (max-width:48em) {
+    /* overlay sub levels on small screens */
+    #sidebar .list-group .collapse.in, #sidebar .list-group .collapsing {
+        position: absolute;
+        z-index: 1;
+        width: 190px;
+    }
+    #sidebar .list-group > .list-group-item {
+        text-align: center;
+        padding: .75rem .5rem;
+        min-width: 39px;
+    }
+    /* hide caret icons of top level when collapsed */
+    #sidebar .list-group > .list-group-item[aria-expanded="true"]::after,
+    #sidebar .list-group > .list-group-item[aria-expanded="false"]::after {
+        display:none;
+    }
+}
+
+/* change transition animation to width when entire sidebar is toggled */
+#sidebar.collapse {
+  -webkit-transition-timing-function: ease;
+       -o-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-duration: .2s;
+       -o-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+#sidebar.collapsing {
+  opacity: 0.8;
+  width: 0;
+  -webkit-transition-timing-function: ease-in;
+       -o-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+  -webkit-transition-property: width;
+       -o-transition-property: width;
+          transition-property: width;
+
+}
+
+.active-side-btn {
+    background-color: #222 !important;
+    color: white !important;
+    border-color: #222 !important;
+}
+
+.profile-input {
+    width: 96% !important;
+    display: inline-block !important;
+}
+
+.name-input {
+    width: 47.8% !important;
+    display: inline-block !important;
+}
+
+.edit-btn {
+    color: #212529 !important;
+    border: none !important;
+    border-radius: 0px !important;
+    background: none !important;
+    padding: 0 !important;
+}
+
+#sidebar-btn-group {
+    position: fixed; 
+    width: 15%;
+}
+
+.edit-warning {
+    color: #ffc107;
+}
+
+#user-progress {
+    height: 2em;
+    border: none !important;
+}
+
+.text-divider {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: rgba(0, 0, 0, .35);
+    margin: 8px 0px;
+}
+
+.text-divider:before, .text-divider:after {
+    content: "";
+    flex-grow: 1;
+    background: rgba(0, 0, 0, .1);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+    margin: 0px 8px;
+}
