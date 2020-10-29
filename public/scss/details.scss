@@ -1,3 +1,5 @@
+$sidebar-background-color: #f2f2f2;
+
 #details-container {
     width: 100%;
     margin-top: 5.8em;
@@ -28,14 +30,14 @@
 
 #sidebar {
     padding: 0 !important;
-    background-color: #f2f2f2;
+    background-color: $sidebar-background-color;
     max-width: 15% !important;
     margin-bottom: -5rem;
 }
 
 #sidebar .list-group-item {
     border-radius: 0;
-    background-color: #f2f2f2;
+    background-color: $sidebar-background-color;
     color: black;
     border-left: 0;
     border-right: 1px solid;

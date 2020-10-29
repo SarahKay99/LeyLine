@@ -1,3 +1,5 @@
+$main-btn-color: #616970;
+
 html, body {
     height: 100%;
     width: 100%;
@@ -26,7 +28,7 @@ footer {
 }
 
 .btn-header {
-    border: #616970 1px solid !important;
+    border: $main-btn-color 1px solid !important;
     width: 100%;
     border-radius: 0 !important;
     margin-left: -0.3em !important;
@@ -43,7 +45,7 @@ footer {
 }
 
 #dropdown-btn {
-    color: #616970;
+    color: $main-btn-color;
 }
 
 #dropdown-btn::after {
@@ -100,65 +102,20 @@ footer {
     margin-top: 10em;
 }
 
-@media (min-width: 992px) {
-    .animate {
-        animation-duration: 0.5s;
-        -webkit-animation-duration: 0.5s;
-        animation-fill-mode: both;
-        -webkit-animation-fill-mode: both;
-    }
+.dropdown .dropdown-menu {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
 }
-    
-  @keyframes slidein {
-    0% {
-      transform: translateY(3.35em);
-      opacity: 0;
-    }
-    100% {
-      transform:translateY(5.75em);
-      opacity: 1;
-    }
-  }
-  
-  @-webkit-keyframes slidein {
-    0% {
-      -webkit-transform: transform;
-      -webkit-opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateY(0);
-      -webkit-opacity: 1;
-    }
-  }
-  
-  .slidein {
-    -webkit-animation-name: slidein;
-    animation-name: slidein;
-  }
 
-  @keyframes slideout {
-    0% {
-      transform: translateY(5.75em);
-      opacity: 1;
-    }
-    100% {
-      transform:translateY(3.35em);
-      opacity: 0;
-    }
-  }
-  
-  @-webkit-keyframes slideout {
-    0% {
-      -webkit-transform: transform;
-      -webkit-opacity: 1;
-    }
-    100% {
-      -webkit-transform: translateY(0);
-      -webkit-opacity: 0;
-    }
-  }
-
-  .slideout {
-    -webkit-animation-name: slideout;
-    animation-name: slideout;
-  }
+.dropdown.show .dropdown-menu { /* For Bootstrap 4, use .dropdown.show instead of .dropdown.open */
+    max-height: 300px;
+    opacity: 1;
+}

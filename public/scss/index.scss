@@ -1,3 +1,5 @@
+$box-shadow-color: #a1a1a1;
+
 #carousel-header {
     padding-left: 2.4em;
     padding-right: 2.4em;
@@ -27,7 +29,7 @@
 
 #label-list {
     border: none !important;
-    box-shadow: 1px 1px 4px #a1a1a1;
+    box-shadow: 1px 1px 4px $box-shadow-color;
 }
 
 .label {
@@ -76,5 +78,5 @@
 }
 
 #img-frame {
-    box-shadow: 1px 1px 4px #a1a1a1
+    box-shadow: 1px 1px 4px $box-shadow-color;
 }
