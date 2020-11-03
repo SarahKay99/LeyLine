@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "docker-compose up -d && set CONNECTION=mongodb://localhost:30000/testDB&& mocha test --exit",
-    "start": "docker-compose up -d && set CONNECTION=mongodb://localhost:30000/leyLineDB && nodemon server.js"
+    "start": "sass public/scss/style.scss:public/css/style.css && docker-compose up -d && set CONNECTION=mongodb://localhost:30000/leyLineDB&& nodemon server.js",
+    "compile:sass": "sass public/scss/style.scss:public/css/style.css"
   },
   "keywords": [
     "Bug"
@@ -22,7 +23,7 @@
     "express": "^4.17.1",
     "express-fileupload": "^1.2.0",
     "express-session": "^1.17.1",
-    "mongoose": "^5.10.0",
+    "mongoose": "^5.10.11",
     "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
