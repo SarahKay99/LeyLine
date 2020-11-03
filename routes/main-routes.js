@@ -47,5 +47,9 @@ router.get('/datasets', (req, res) => {
     res.render('datasets', authModels.getUserViewModel(req));
 });
 
+router.get('/labels', (req, res) => {
+    res.render('labels', authModels.getUserViewModel(req));
+});
+
 
 module.exports = router;

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <%- include('templates/head', {subtitle: "Data Labeling" }); -%>
+    <body>
+        <div id="page-container">
+            <div id="content-wrap">
+                <%- include('templates/header'); -%>
+                <div id="labels-container">
+                    <div id="label-frame">
+                        <input type="file" accept="image/*">
+                    </div>
+                </div>
+                <%- include('templates/label_options') -%>
+            </div>
+            <%- include('templates/footer'); -%>
+        </div>
+    </body>
+</html>

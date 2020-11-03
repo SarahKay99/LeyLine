@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "docker-compose up -d && set CONNECTION=mongodb://localhost:30000/testDB&& mocha test --exit",
-    "start": "sass public/scss/style.scss:public/css/style.css && docker-compose up -d && set CONNECTION=mongodb://localhost:30000/leyLineDB&& nodemon server.js",
-    "compile:sass": "sass public/scss/style.scss:public/css/style.css"
+    "start": "docker-compose up -d && set CONNECTION=mongodb://localhost:30000/leyLineDB && nodemon server.js"
   },
   "keywords": [
     "Bug"
