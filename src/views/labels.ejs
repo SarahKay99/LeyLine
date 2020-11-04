@@ -6,13 +6,24 @@
             <div id="content-wrap">
                 <%- include('templates/header'); -%>
                 <div id="labels-container">
-                    <div id="label-frame">
-                        <input type="file" accept="image/*">
+                    <div id="label-frame" style="text-align: center;">
+                        <div id="upload-options">
+                            <i id="cloud-icon" class="fas fa-cloud-upload-alt"></i><br>
+                            <label id="#upload-wrapper" for="img-upload" class="btn-lg btn-secondary" style="cursor: pointer;">
+                            Choose an image to upload
+                            </label>
+                            <input id="img-upload" name="uploadedImg" type="file" class="form-control" accept="image/*"><br>
+                            <small>or drag and drop</small>
+                        </div>
+                        <div id="image-preview">
+                            
+                        </div>
                     </div>
                 </div>
                 <%- include('templates/label_options') -%>
             </div>
             <%- include('templates/footer'); -%>
         </div>
+        <script src="/javascripts/labels.js"></script>
     </body>
 </html>

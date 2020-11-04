@@ -1,8 +1,22 @@
 #labels-container {
-    margin-top: 6em;
+    margin-top: 8em;
     width: 100%;
 }
 
 #label-frame {
-    border: green 1px solid;
+    margin: 0 auto;
+    width: 90%;
+    border: #cccccc 1px dashed;
+    border-radius: 5px;
+    padding-top: 8em;
+    padding-bottom: 8em;
+}
+
+#cloud-icon {
+    color: #007bff;
+    font-size: 10em;
+}
+
+#image-preview {
+    display: none;
 }
